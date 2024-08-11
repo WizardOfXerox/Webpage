@@ -261,7 +261,7 @@ body::-webkit-scrollbar {
 
 /* Responsive: Hide text links and show icon links */
 
-@media (max-width: 600px) and (orientation: portrait) {
+@media (max-width: 500px) and (orientation: portrait) {
     .text-links {
         display: none;
     }
