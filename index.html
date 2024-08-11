@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xerox Artificial Intelligence (XAI)</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="nav-header" id="header">
+        <div class="nav-content">
+            <!-- Text Links (Default) -->
+            <div class="nav-links text-links">
+                <a href="#" class="nav-link active" data-target="about"><i class="fas fa-user" style="margin-right: 10px;"></i>About</a>
+                <a href="#" class="nav-link" data-target="resume"><i class="fas fa-file-alt" style="margin-right: 10px;"></i>Resume</a>
+                <a href="#" class="nav-link" data-target="projects"><i class="fas fa-briefcase" style="margin-right: 10px;"></i>Projects</a>
+                <a href="#" class="nav-link" data-target="blog"><i class="fas fa-blog" style="margin-right: 10px;"></i>Blog</a>
+                <a href="#" class="nav-link" data-target="contact"><i class="fas fa-envelope" style="margin-right: 10px;"></i>Contact</a>
+                <!-- <a href="#" class="nav-link" data-target="calculator"><i class="fas fa-calculator" style="margin-right: 10px;"></i>Calculator</a> -->
+            </div>
+
+            <!-- Icon Links (Responsive) -->
+            <div class="nav-links icon-links">
+                <a href="#" class="nav-link active" data-target="about"><i class="fas fa-user"></i></a>
+                <a href="#" class="nav-link" data-target="resume"><i class="fas fa-file-alt"></i></a>
+                <a href="#" class="nav-link" data-target="projects"><i class="fas fa-briefcase"></i></a>
+                <a href="#" class="nav-link" data-target="blog"><i class="fas fa-blog"></i></a>
+                <a href="#" class="nav-link" data-target="contact"><i class="fas fa-envelope"></i></a>
+                <a href="#" class="nav-link" data-target="calculator"><i class="fas fa-calculator"></i></a>
+            </div>
+        </div>
+        <div class="header-button"></div>
+    </div>
+    <div id="mySidebar" class="nav-sidebar">
+        <h2>XAI Projects</h2>
+        <a href="#project-1">AI Project 1</a>
+        <a href="#project-2">AI Project 2</a>
+        <a href="#project-3">AI Project 3</a>
+        <h2>Book Series</h2>
+        <a href="#book-1">Book 1</a>
+        <a href="#book-2">Book 2</a>
+        <a href="#book-3">Book 3</a>
+    </div>
+    <div class="main-content" id="main-content">
+        <div id="about" class="section active">
+            <div class="about-frame">
+                <div class="about-container">
+                    <div class="profile-card animate__animated animate__pulse">
+                        <img src="mosaic_mosaic8.jpg" alt="Richard Hanrick" class="profile-pic">
+                        <h2>Wiz Xerox</h2>
+                        <p>Web Developer</p>
+                        <div class="contact-details">
+                            <div class="contact-item animate__animated animate__pulse animate__delay-1s">
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <span>wizardofxerox@gmail.com</span>
+                            </div>
+                            <div class="contact-item animate__animated animate__pulse animate__delay-2s">
+                                <ion-icon name="call-outline"></ion-icon>
+                                <span>+63 (942) 459-0845</span>
+                            </div>
+                            <div class="contact-item animate__animated animate__pulse animate__delay-3s">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <span>January 17, 2006</span>
+                            </div>
+                            <div class="contact-item animate__animated animate__pulse animate__delay-4s">
+                                <ion-icon name="location-outline"></ion-icon>
+                                <span>Dasmariñas, Cavite, Philippines</span>
+                            </div>
+                            <div class="profile-social animate__animated animate__pulse animate__delay-5s">
+                                <div class="profile-social-content">
+                                    <a alt="Discord" aria-label="Discord" href="https://discord.com">
+                                        <ion-icon name="logo-discord" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Facebook" aria-label="Facebook" href="https://facebook.com">
+                                        <ion-icon name="logo-facebook" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Youtube" aria-label="Youtube" href="https://youtube.com">
+                                        <ion-icon name="logo-youtube" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Github" aria-label="Github" href="https://github.com">
+                                        <ion-icon name="logo-github" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Codepen" aria-label="Codepen" href="https://codepen.io">
+                                        <ion-icon name="logo-codepen" aria-hidden="false"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h2>About Me</h2>
+                        <p>Theres nothing about me thats special</p>
+                    </div>
+                    <div class="prog-card animate__animated animate__pulse">
+                        <ion-icon name="code-slash-outline"></ion-icon>
+                        <h2>Programming</h2>
+                        <p>Languages</p>
+                        <div class="contact-details">
+                            <div class="prog-language">
+                                <div class="contact-icons">
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-2s">
+                                        <i class="fa-brands fa-html5"></i>
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-2s">
+                                        <i class="fa-brands fa-css3-alt"></i>
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-3s">
+                                        <i class="fa-brands fa-js"></i>
+                                        <span>JAVASCRIPT</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-4s">
+                                        <i class="fa-brands fa-java"></i>
+                                        <span>JAVA</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-4s">
+                                        <i class="fa-brands fa-python"></i>
+                                        <span>PYTHON</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-4s">
+                                        <i class="fa-solid fa-database"></i>
+                                        <span>MYSQL</span>
+                                    </div>
+                                </div>
+                                <div class="contact-progress-bar">
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar1">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">50%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar2">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">60%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar3">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">70%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar4">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar5">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar6">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">100%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-section">
+                        <h2>What I'm Doing</h2>
+                        <div class="services-contents">
+                            <div class="service-card">
+                                <ion-icon name="brush-outline"></ion-icon>
+                                <h3>Web Design</h3>
+                                <p>The most modern and high-quality design made at a professional level.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="code-slash-outline"></ion-icon>
+                                <h3>Web Development</h3>
+                                <p>High-quality development of sites at the professional level.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                                <h3>Mobile Apps</h3>
+                                <p>Professional development of applications for iOS and Android.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="desktop-outline"></ion-icon>
+                                <h3>Computer Technician</h3>
+                                <p>Good at troubleshooting computer problems.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="game-controller"></ion-icon>
+                                <h3>Game Developer</h3>
+                                <p>High-quality game making skills at a professional level.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="camera-outline"></ion-icon>
+                                <h3>Photography</h3>
+                                <p>I make high-quality photos of any category at a professional level.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials-section">
+                        <div class="testimonials-content">
+                            <h2>Customer Ratings</h2>
+                            <div class="testimonial-card">
+                                <img src="mosaic_mosaic8.jpg" alt="AssassinOfXerox (AOX)" class="testimonial-pic">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-text-name">
+                                        <h3>AssassinOfXerox (AOX)</h3>
+                                        <div class="testimonial-text-stars">
+                                            <a alt="Ratings" aria-label="1-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="2-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="3-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="4-Star">
+                                                <ion-icon name="star-half" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="5-Star">
+                                                <ion-icon name="star-outline" aria-hidden="false"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p>Nothing yet...</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <img src="mosaic_mosaic8.jpg" alt="PaladinOfXerox (POX)" class="testimonial-pic">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-text-name">
+                                        <h3>PaladinOfXerox (POX)</h3>
+                                        <div class="testimonial-text-stars">
+                                            <a alt="Ratings" aria-label="1-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="2-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="3-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="4-Star">
+                                                <ion-icon name="star-half" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="5-Star">
+                                                <ion-icon name="star-outline" aria-hidden="false"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p>Nothing yet...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clients-section">
+                        <h2>Clients</h2>
+                        <div class="clients-contents">
+                            <div class="clients-card">
+                                <img src="DL-001-DEVI.png" alt="Client 1">
+                                <p>Client 1</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="DL-002-CIRLET.png" alt="Client 2">
+                                <p>Client 2</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="DL-003-HIDA.png" alt="Client 3">
+                                <p>Client 3</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="mosaic_mosaic8.jpg" alt="Client 4">
+                                <p>Client 4</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="ph2.webp" alt="Client 5">
+                                <p>Client 5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="resume" class="section">
+            <div class="resume-container">
+                <div class="resume-header">
+                    <div class="resume-card-container">
+                        <div>
+                            <img src="mosaic_mosaic8.jpg" alt="Profile Picture" />
+                            <h2>Wiz Xerox</h2>
+                            <p>AI Researcher | Machine Learning Specialist</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-card-container">
+                    <div class="experience">
+                        <h3>Experience</h3>
+                        <div class="card-container">
+                            <div class="card-solo">
+                                <div class="experience-item card-content">
+                                    <h4>AI Research Scientist at XAI</h4>
+                                    <p>2023 - Present</p>
+                                    <p>Conducted research in machine learning, natural language processing, and computer vision.</p>
+                                </div>
+                            </div>
+                            <div class="card-solo">
+                                <div class="experience-item card-content">
+                                    <h4>Machine Learning Engineer at TechCorp</h4>
+                                    <p>2020 - 2023</p>
+                                    <p>Developed and deployed machine learning models for various applications.</p>
+                                </div>
+                            </div>
+                            <div class="card-solo">
+                                <div class="experience-item card-content">
+                                    <h4>Machine Learning Engineer at TechCorp</h4>
+                                    <p>2020 - 2023</p>
+                                    <p>Developed and deployed machine learning models for various applications.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="resume-card-container">
+                    <div class="skills">
+                        <h3>Skills</h3>
+                        <div class="skill-card-container">
+                            <div class="card-solo">
+                                <div class="skill-item card-content">
+                                    <h4>Machine Learning</h4>
+                                    <p>Proficient in developing algorithms and models using Python, TensorFlow, and PyTorch.</p>
+                                </div>
+                            </div>
+                            <div class="card-solo">
+                                <div class="skill-item card-content">
+                                    <h4>Data Analysis</h4>
+                                    <p>Experienced in analyzing large datasets using statistical methods and visualization tools.</p>
+                                </div>
+                            </div>
+                            <div class="card-solo">
+                                <div class="skill-item card-content">
+                                    <h4>Machine Learning</h4>
+                                    <p>Proficient in developing algorithms and models using Python, TensorFlow, and PyTorch.</p>
+                                </div>
+                            </div>
+                            <div class="card-solo">
+                                <div class="skill-item card-content">
+                                    <h4>Data Analysis</h4>
+                                    <p>Experienced in analyzing large datasets using statistical methods and visualization tools.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="projects" class="section">
+            <button id="sidebarToggle" class="openbtn" onclick="toggleNav()">
+				☰ Open Sidebar
+			</button>
+            <button id="ProjectToggle" class="creation-nav-link creationbtn active" data-target="project">
+				☰ Projects
+			</button>
+            <button id="BookToggle" class="creation-nav-link creationbtn" data-target="books">
+				☰ Books
+			</button>
+
+            <div id="project" class="section-c1 active">
+                <h1>Projects</h1>
+                <div id="ai-project-container" class="project card-container">
+                    <div id="project-1" class="card">
+                        <img src="DL-001-DEVI.png" alt="AI Project 1" />
+                        <div class="card-content">
+                            <h2>AI Project 1</h2>
+                            <p>Description of AI Project 1...</p>
+                        </div>
+                    </div>
+                    <div id="project-2" class="card">
+                        <img src="DL-002-CIRLET.png" alt="AI Project 2" />
+                        <div class="card-content">
+                            <h2>AI Project 2</h2>
+                            <p>Description of AI Project 2...</p>
+                        </div>
+                    </div>
+                    <div id="project-3" class="card">
+                        <img src="DL-003-HIDA.png" alt="AI Project 3" />
+                        <div class="card-content">
+                            <h2>AI Project 3</h2>
+                            <p>Description of AI Project 3...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="books" class="section-c1">
+                <h1>Book Series</h1>
+                <div id="book-container" class="book card-container">
+                    <div id="book-1" class="card">
+                        <img src="ph1.png" alt="Book 1" />
+                        <div class="card-content">
+                            <a href="#" class="book-title">
+                                <h2>Book 1</h2>
+                            </a>
+                            <div class="chapter-list">
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <!-- Add more chapters as needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="book-2" class="card">
+                        <img src="ph2.webp" alt="Book 2" />
+                        <div class="card-content">
+                            <a href="#" class="book-title">
+                                <h2>Book 2</h2>
+                            </a>
+                            <div class="chapter-list">
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <!-- Add more chapters as needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="book-3" class="card">
+                        <img src="mosaic_mosaic8.jpg" alt="Book 3" />
+                        <div class="card-content">
+                            <a href="#" class="book-title">
+                                <h2>Book 3</h2>
+                            </a>
+                            <div class="chapter-list">
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <!-- Add more chapters as needed -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="blog" class="section">
+            <h1>Blog</h1>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <img src="ph1.png" alt="Design Conferences In 2022" />
+                    <div class="blog-card-content">
+                        <h3>Design Conferences In 2022</h3>
+                        <p>Test</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="ph1.png" alt="Best Fonts Every Designer" />
+                    <div class="blog-card-content">
+                        <h3>Best Fonts Every Designer</h3>
+                        <p>Test</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="ph1.png" alt="Design Digest #80" />
+                    <div class="blog-card-content">
+                        <h3>Design Digest #80</h3>
+                        <p>Test</p>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <img src="ph1.png" alt="UI Interactions Of The Week" />
+                    <div class="blog-card-content">
+                        <h3>UI Interactions Of The Week</h3>
+                        <p>Test</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="contact" class="section">
+            <!-- <h1>Contact</h1> -->
+            <div id="map" class="mapbox">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3865.8666024435183!2d120.9735823757702!3d14.319180283903348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d5e7236ff6ff%3A0x83ac5056954d0747!2sGoto%20Liceous!5e0!3m2!1sen!2sph!4v1720027717181!5m2!1sen!2sph"
+                    width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+				</iframe>
+            </div>
+            <div class="card-container">
+                <div class="card-solo">
+                    <div class="card-content">
+                        <h2>Email Address</h2>
+                        <a href="mailto:wizardofxerox@gmail.com">wizardofxerox@gmail.com</a>
+                    </div>
+                </div>
+                <div class="card-solo">
+                    <div class="card-content">
+                        <h2>Contact Number</h2>
+                        <a href="tel:+639424590845">+63 (942) 459-0845</a>
+                    </div>
+                </div>
+                <div class="card-solo">
+                    <div class="card-content">
+                        <h2>Social Media</h2>
+                        <div>
+                            <a alt="Discord" aria-label="Discord" href="https://discord.com">
+                                <ion-icon name="logo-discord" aria-hidden="false"></ion-icon>
+                            </a>
+                            <a alt="Facebook" aria-label="Facebook" href="https://facebook.com">
+                                <ion-icon name="logo-facebook" aria-hidden="false"></ion-icon>
+                            </a>
+                            <a alt="Youtube" aria-label="Youtube" href="https://youtube.com">
+                                <ion-icon name="logo-youtube" aria-hidden="false"></ion-icon>
+                            </a>
+                            <a alt="Github" aria-label="Github" href="https://github.com">
+                                <ion-icon name="logo-github" aria-hidden="false"></ion-icon>
+                            </a>
+                            <a alt="Codepen" aria-label="Codepen" href="https://codepen.io">
+                                <ion-icon name="logo-codepen" aria-hidden="false"></ion-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-solo">
+                    <div class="card-content">
+                        <h2>Location</h2>
+                        <a href="https://maps.app.goo.gl/xPeCvf2cU2MnmGSo8">8X9G+MFF, Dasmariñas, Cavite</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <input type="text" placeholder="Full name" />
+                <input type="email" placeholder="Email address" />
+                <textarea placeholder="Your Message"></textarea>
+                <button>Send Message</button>
+            </div>
+        </div>
+        <div id="calculator" class="section">
+            <div class="calculator-container">
+                <h2>Simple Calculator</h2>
+                <div class="calculator-card">
+                    <h3>Addition</h3>
+                    <input type="number" id="add1" placeholder="Enter first number">
+                    <input type="number" id="add2" placeholder="Enter second number">
+                    <button onclick="addition()">Add</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>Subtraction</h3>
+                    <input type="number" id="sub1" placeholder="Enter first number">
+                    <input type="number" id="sub2" placeholder="Enter second number">
+                    <button onclick="subtraction()">Subtract</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>Multiplication</h3>
+                    <input type="number" id="mul1" placeholder="Enter first number">
+                    <input type="number" id="mul2" placeholder="Enter second number">
+                    <button onclick="multiplication()">Multiply</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>Division</h3>
+                    <input type="number" id="div1" placeholder="Enter first number">
+                    <input type="number" id="div2" placeholder="Enter second number">
+                    <button onclick="division()">Divide</button>
+                </div>
+                <div class="calculator-card">
+                    <h3>Percentage</h3>
+                    <input type="number" id="num" placeholder="Enter number">
+                    <input type="number" id="percent" placeholder="Enter percentage">
+                    <button onclick="percentage()">Percentage</button>
+                </div>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-button"></div>
+        <div class="copyright-area">
+            <div class="copyright-container">
+                <div class="copyright-text">
+                    <p>Copyright &copy; 2024, All Right Reserved <a href="https://github.com">WOX</a></p>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a href="#" data-target="about">About</a>
+                <a href="#" data-target="resume">Resume</a>
+                <a href="#" data-target="projects">Projects</a>
+                <a href="#" data-target="blog">Blog</a>
+                <a href="#" data-target="contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <script language="javascript">
+        //Calculator
+        function addition() {
+            var add1 = parseFloat(document.getElementById("add1").value);
+            var add2 = parseFloat(document.getElementById("add2").value);
+            var result = add1 + add2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+
+        function subtraction() {
+            var sub1 = parseFloat(document.getElementById("sub1").value);
+            var sub2 = parseFloat(document.getElementById("sub2").value);
+            var result = sub1 - sub2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+
+        function multiplication() {
+            var mul1 = parseFloat(document.getElementById("mul1").value);
+            var mul2 = parseFloat(document.getElementById("mul2").value);
+            var result = mul1 * mul2;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+
+        function division() {
+            var div1 = parseFloat(document.getElementById("div1").value);
+            var div2 = parseFloat(document.getElementById("div2").value);
+            if (div2 === 0) {
+                document.getElementById("result").innerHTML = "Error: Division by zero is not allowed";
+            } else {
+                var result = div1 / div2;
+                document.getElementById("result").innerHTML = "Result: " + result;
+            }
+        }
+
+        function percentage() {
+            var num = parseFloat(document.getElementById("num").value);
+            var percent = parseFloat(document.getElementById("percent").value);
+            var result = (num * percent) / 100;
+            document.getElementById("result").innerHTML = "Result: " + result;
+        }
+
+        //Navigations
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll(".nav-link");
+            navLinks.forEach((link) => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const target = this.getAttribute("data-target");
+                    navLinks.forEach((link) => link.classList.remove("active"));
+                    this.classList.add("active");
+                    const sections = document.querySelectorAll(".section");
+                    sections.forEach((section) => {
+                        section.classList.remove("active");
+                    });
+                    document.getElementById(target).classList.add("active");
+                    topFunction();
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll(".creation-nav-link");
+            navLinks.forEach((link) => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const target = this.getAttribute("data-target");
+                    navLinks.forEach((link) => link.classList.remove("active"));
+                    this.classList.add("active");
+                    const sections = document.querySelectorAll(".section-c1");
+                    sections.forEach((section) => {
+                        section.classList.remove("active");
+                    });
+                    document.getElementById(target).classList.add("active");
+                    topFunction();
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const footerNavLinks = document.querySelectorAll(".footer-nav a");
+            footerNavLinks.forEach((link) => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    const target = this.getAttribute("data-target");
+                    const navLinks = document.querySelectorAll(".nav-link");
+                    navLinks.forEach((link) => {
+                        link.classList.remove("active");
+                    });
+                    const sections = document.querySelectorAll(".section");
+                    sections.forEach((section) => {
+                        section.classList.remove("active");
+                    });
+                    document.getElementById(target).classList.add("active");
+
+                    // Add active class to the corresponding.nav-link element
+                    const correspondingNavLink = document.querySelector(`.nav-link[data-target="${target}"]`);
+                    if (correspondingNavLink) {
+                        correspondingNavLink.classList.add("active");
+                    }
+
+                    topFunction();
+                });
+            });
+        });
+
+        //Sidebar
+        let isSidebarOpen = false;
+
+        function toggleNav() {
+            const sidebar = document.getElementById("mySidebar");
+            const content = document.querySelector(".main-content");
+            const button = document.getElementById("sidebarToggle");
+
+            if (isSidebarOpen) {
+                sidebar.style.transform = "translateX(-250px)";
+                content.style.marginLeft = "0px";
+                button.textContent = "☰ Open Sidebar";
+            } else {
+                sidebar.style.transform = "translateX(0)";
+                content.style.marginLeft = "220px";
+                button.textContent = "✖ Close Sidebar";
+            }
+
+            isSidebarOpen = !isSidebarOpen;
+        }
+
+        let lastScrollY = window.scrollY;
+        let timeout = null;
+        let isHovered = false; // Track hover state
+
+        // Function to reset the header after inactivity
+        function resetHeader() {
+            if (!isHovered) {
+                const header = document.getElementById('header');
+                const maincontent = document.getElementById('main-content');
+                header.style.transform = 'translateY(-48px)';
+                maincontent.style.paddingTop = '20px';
+            }
+        }
+
+        // Function to handle the scroll event
+        function handleScroll() {
+            const header = document.getElementById('header');
+            const maincontent = document.getElementById('main-content');
+
+            if (window.scrollY < lastScrollY) {
+                // Scrolling up
+                header.style.transform = 'translateY(0px)';
+                maincontent.style.paddingTop = '70px';
+            } else {
+                // Scrolling down
+                header.style.transform = 'translateY(-48px)';
+                maincontent.style.paddingTop = '20px';
+            }
+
+            lastScrollY = window.scrollY;
+
+            // Clear any previous timeout and set a new one
+            if (timeout) {
+                clearTimeout(timeout);
+            }
+
+            // Set a timeout to reset the header after 2 seconds of inactivity
+            timeout = setTimeout(resetHeader, 2000);
+        }
+
+        // Handle hover state
+        const headerElement = document.getElementById('header');
+        const maincontent = document.getElementById('main-content');
+        headerElement.addEventListener('mouseover', () => {
+            isHovered = true;
+            // Ensure the header is in the visible state when hovered
+            headerElement.style.transform = 'translateY(0px)';
+            maincontent.style.paddingTop = '70px';
+        });
+
+        headerElement.addEventListener('mouseout', () => {
+            isHovered = false;
+            maincontent.style.paddingTop = '20px';
+            // Reset to original state after hover
+            header.style.transform = 'translateY(-48px)'
+                // timeout = setTimeout(resetHeader, 2000);
+        });
+
+        // Check if the device width is less than or equal to 530px
+        if (window.matchMedia("(max-width: 530px) and (orientation: portrait)").matches) {
+            window.addEventListener('scroll', handleScroll);
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        //Cards Not Updated
+
+        /* window.addEventListener("resize", function() {
+            adjustCardLayout();
+        });
+
+        function adjustCardLayout() {
+            const cardContainers = document.querySelectorAll(".card-container");
+            cardContainers.forEach((container) => {
+                const cards = container.querySelectorAll(".card, .card-solo");
+                const containerWidth = container.offsetWidth;
+
+                const cardsPerRow = Math.floor(containerWidth / 320);
+                const flexBasisValue = `calc(${100 / cardsPerRow}% - 20px)`;
+
+                cards.forEach((card) => {
+                    card.style.flexBasis = flexBasisValue;
+                });
+            });
+        }
+
+        window.onload = function() {
+            adjustCardLayout();
+        }; */
+    </script>
+    <!-- <script src="script.js"></script> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
+</script>
+<!-- <script src="script.js"></script> -->
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
