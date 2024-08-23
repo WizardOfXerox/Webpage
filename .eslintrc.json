@@ -1,0 +1,35 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module"
+  },
+  "globals": {
+    "process": "readonly",
+    "require": "readonly"
+  },
+  "rules": {
+    "no-console": "off",  // Allow console statements (useful for Node.js development)
+    "no-undef": "error",  // Disallow undefined variables
+    "curly": "error",     // Enforce consistent brace style for all control statements
+    "eqeqeq": "error",    // Require the use of === and !==
+    "no-var": "error",    // Disallow var, encourage let/const
+    "quotes": ["error", "single"], // Enforce single quotes
+    "semi": ["error", "always"],   // Enforce semicolons
+    // "indent": ["error", 4],        // Enforce consistent indentation (2 spaces)
+    "comma-dangle": ["error", "always-multiline"] // Require trailing commas in multiline statements
+  },
+  "ignorePatterns": [
+    "node_modules/",    // Ignore node_modules folder
+    "dist/",            // Ignore build output directory
+    "Webpage/"         // Ignore static files (served by Express)
+  ]
+}

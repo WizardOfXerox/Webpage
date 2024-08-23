@@ -1,0 +1,217 @@
+.creation-nav-link-btn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #2e2e31;
+    color: #B3B3B3;
+    padding: 10px 15px;
+    border: none;
+    margin: 10px;
+}
+
+.creation-nav-link-btn:hover {
+    background-color: #02ff88;
+    color: #242424;
+}
+
+.ai-card-container,
+.book-card-container,
+.website-card-container {
+    display: flex;
+    gap: 0px;
+    overflow-x: auto;
+    /* padding-bottom: 20px; */
+    scroll-snap-type: x mandatory;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.ai-card,
+.book-card,
+.website-card {
+    background-color: #2f2e2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    scroll-snap-align: center;
+    transition: transform 0.3s, flex-basis 0.3s;
+    animation: slideDown 0.5s ease;
+    margin: 8px 8px;
+    -webkit-transition: transform 0.3s, flex-basis 0.3s;
+    -moz-transition: transform 0.3s, flex-basis 0.3s;
+    -ms-transition: transform 0.3s, flex-basis 0.3s;
+    -o-transition: transform 0.3s, flex-basis 0.3s;
+}
+
+@media screen and (max-width: 884px) and (max-device-width: 914px) and (orientation: portrait) {
+    .ai-card,
+    .book-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.ai-card img,
+.book-card img,
+.website-card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    object-position: 50% 0%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ai-card:hover,
+.book-card:hover,
+.website-card:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.project,
+.book,
+.website {
+    margin-bottom: 40px;
+}
+
+.project img,
+.book img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-c1 {
+    display: none;
+}
+
+.section-c1.active {
+    display: block;
+    animation: slideDown 0.5s ease;
+    transition: transform 0.3s, flex-basis 0.3s;
+}
+
+.chapter-list {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    flex-grow: 1;
+    border-top-style: groove;
+    border-color: #02ff88;
+}
+
+.chapter-list::-webkit-scrollbar {
+    display: none;
+}
+
+.book-title,
+.chapter-link {
+    text-decoration: none;
+    color: #02ff88;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.ai-card-content,
+.book-card-content,
+.website-card-content {
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* max-height: calc(100% - 150px); */
+    max-height: 100%;
+    text-align: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-wrap: wrap;
+}
+
+.ai-card-content h4,
+.book-card-content h4,
+.website-card-content h4 {
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    cursor: pointer;
+}
+
+.ai-card-content h4,
+.book-card-content h4,
+.website-card-content h4 {
+    flex-shrink: 0;
+}
+
+.ai-card-content p,
+.book-card-content p,
+.website-card-content p {
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    text-decoration: none;
+}
+
+.ai-card-content a,
+.book-card-content a,
+.website-card-content a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #B3B3B3;
+}
+
+h2 {
+    margin-top: 0;
+    text-wrap: wrap;
+}
+
+
+/*Website*/
+
+.container {
+    width: 300px;
+    height: 270px;
+    overflow: hidden;
+    /*Hideanyoverflowingcontent*/
+    position: relative;
+    /*Positionrelativetotheparentcontainer*/
+    padding: 0;
+    /*Ensurenopadding*/
+    margin: 0;
+    /*Ensurenomargin*/
+    box-sizing: content-box;
+    /*Includepaddingandborderintheelement'stotalwidthandheight*/
+    border-bottom: solid #05ff82;
+    margin-bottom: 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-width: 3;
+}
+
+.responsive-iframe {
+    width: calc(100% / 0.5);
+    /*Adjustbasedonscale*/
+    height: calc(100% / 0.5);
+    /*Adjustbasedonscale*/
+    /*Removeborder*/
+    border: none;
+    zoom: 0.5;
+    transform: scale(0.5);
+    transform-origin: top left;
+    /*Ensuresscalingfromthetopleft*/
+    overflow: hidden;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+}

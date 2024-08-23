@@ -1,0 +1,214 @@
+/*
+*Color Pallets
+*#05ff82
+*#02ff88
+*#B3B3B3
+*#413f41
+*#242424
+*#232323
+*#2e2e31
+*#2F2E30
+*#2f2e2f
+*#050000
+*/
+
+:root {
+    --progress-width: 100%;
+    /* Default width if not overridden */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #232323;
+    color: #B3B3B3;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.section button.active {
+    background-color: #02ff88;
+    color: #242424;
+}
+
+.main-content {
+    padding: 20px;
+    transition: margin-left 0.5s, padding-top 0.5s;
+    -webkit-transition: margin-left 0.5s, padding-top 0.5s;
+    -moz-transition: margin-left 0.5s, padding-top 0.5s;
+    -ms-transition: margin-left 0.5s, padding-top 0.5s;
+    -o-transition: margin-left 0.5s, padding-top 0.5s;
+}
+
+h1 {
+    color: #05ff82;
+}
+
+h2,
+h3 {
+    color: #02ff88;
+}
+
+.card-container {
+    display: flex;
+    gap: 0px;
+    overflow-x: auto;
+    /* padding-bottom: 20px; */
+    scroll-snap-type: x mandatory;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.card {
+    background-color: #2f2e2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: center;
+    transition: transform 0.3s, flex-basis 0.3s;
+    animation: slideDown 0.5s ease;
+    margin: 8px 8px;
+    -webkit-transition: transform 0.3s, flex-basis 0.3s;
+    -moz-transition: transform 0.3s, flex-basis 0.3s;
+    -ms-transition: transform 0.3s, flex-basis 0.3s;
+    -o-transition: transform 0.3s, flex-basis 0.3s;
+}
+
+@media screen and (max-width: 884px) and (max-device-width: 914px) and (orientation: portrait) {
+    .card,
+    .card-solo {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
+    object-position: 50% 0%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-solo {
+    background-color: #2f2e2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: auto;
+    max-width: auto;
+    max-height: auto;
+    display: flex;
+    flex-direction: row;
+    scroll-snap-align: center;
+    transition: transform 0.3s, flex-basis 0.3s;
+    animation: slideDown 0.5s ease;
+    margin: 10px 12px;
+    flex-grow: 1;
+    -webkit-transition: transform 0.3s, flex-basis 0.3s;
+    -moz-transition: transform 0.3s, flex-basis 0.3s;
+    -ms-transition: transform 0.3s, flex-basis 0.3s;
+    -o-transition: transform 0.3s, flex-basis 0.3s;
+}
+
+.card-content {
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* max-height: calc(100% - 150px); */
+    max-height: 100%;
+    text-align: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.card-content h2,
+.card-content h3 {
+    margin: 10px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    cursor: pointer;
+}
+
+.card-content h2 {
+    flex-shrink: 0;
+}
+
+.card-content p {
+    margin: 5px 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
+    text-decoration: none;
+}
+
+.card-content a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #B3B3B3;
+}
+
+.card-content iframe {
+    border: solid #02ff88;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #02ff88;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.card-solo:hover {
+    transform: scale(1.03);
+    -webkit-transform: scale(1.03);
+    -moz-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    -o-transform: scale(1.03);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: slideDown 0.5s ease;
+    transition: transform 0.3s, flex-basis 0.3s;
+}
+
+ion-icon {
+    color: #B3B3B3;
+    font-size: 20px;
+}
+
+
+/* SCREEN SIZES */

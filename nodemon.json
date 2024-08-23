@@ -1,0 +1,5 @@
+{
+    "watch": ["server.mjs", ".env"],
+    "ignore": ["Webpage/"],
+    "ext": "js,json"
+}

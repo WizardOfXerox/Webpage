@@ -1,0 +1,105 @@
+/* FOOTER */
+
+.footer-button {
+    width: 35px;
+    height: 35px;
+    border: #02ff88 12px solid;
+    border-radius: 35px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.footer-button:hover {
+    width: 35px;
+    height: 35px;
+    border: #05ff82 12px solid;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    position: relative;
+}
+
+.copyright-area:hover {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.footer {
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 2em;
+    overflow: hidden;
+    margin: 0 auto;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.footer:hover {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+    height: 110px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-direction: row;
+    row-gap: 10px;
+    align-items: center;
+}
+
+.footer-nav a {
+    margin: 10px;
+    margin-top: 0;
+    color: #02ff88;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 1;
+}
+
+.copyright-area {
+    background: #202020;
+    height: fill;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    bottom: 30px;
+    border-top: 10px solid #02ff88;
+    border-width: 5px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.copyright-text p {
+    font-size: 14px;
+    color: #B3B3B3;
+    margin-top: 20px;
+}
+
+.copyright-text p a {
+    color: #02ff88;
+    text-decoration: none;
+    opacity: 1;
+    font-weight: bold;
+}

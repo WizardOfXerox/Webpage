@@ -1,0 +1,184 @@
+/*Navigation */
+
+.nav-header {
+    background-color: #2e2e31;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    overflow: hidden;
+    max-height: 48px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: rgb(2, 255, 136, 0.7);
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    transform: translateY(-48px);
+    /*Initialhiddenstate*/
+    transition: transform 1s ease;
+    animation: progress-bar-load 3s normal forwards;
+    pointer-events: auto;
+    /*Ensureinteractionsareallowed*/
+    -webkit-animation: progress-bar-load 3s normal forwards;
+}
+
+
+/* Ensure hover state works properly */
+
+.nav-header:hover {
+    transform: translateY(0);
+    /* Show header on hover */
+}
+
+.nav-header:hover~.main-content {
+    padding-top: 70px;
+}
+
+.nav-header a {
+    float: left;
+    display: block;
+    color: #B3B3B3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+
+/* Default: Show text links and hide icon links */
+
+.text-links {
+    display: block;
+}
+
+.icon-links {
+    display: none;
+}
+
+
+/* Responsive: Hide text links and show icon links */
+
+@media (max-width: 550px) and (orientation: portrait) {
+    .text-links {
+        display: none;
+    }
+    .icon-links {
+        display: block;
+    }
+}
+
+
+/* @media screen and (max-width: 530px) and (orientation: portrait) {
+    .nav-header {
+        top: -48px;
+    }
+}
+
+ @media screen and (max-width: 412px) and (max-device-width: 914px) and (orientation: portrait) {
+    .nav-header {
+        top: -48px;
+    }
+    .nav-header:hover {
+        transform: translateY(48px);
+        -webkit-transform: translateY(48px);
+        -moz-transform: translateY(48px);
+        -ms-transform: translateY(48px);
+        -o-transform: translateY(48px);
+    }
+    .nav-header:hover~.main-content {
+        padding-top: 120px;
+    }
+} */
+
+.nav-header a:hover {
+    background-color: #02ff88;
+    color: #242424;
+}
+
+.nav-header a.active {
+    background-color: #02ff88;
+    color: #242424;
+}
+
+
+/*OTHERS*/
+
+
+/*
+.nav-header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+    -webkit-transform: translateY(-50px);
+    -moz-transform: translateY(-50px);
+    -ms-transform: translateY(-50px);
+    -o-transform: translateY(-50px);
+}
+
+.header-button {
+    position: fixed;
+    bottom: -20px;
+    width: 35px;
+    height: 35px;
+    border: #02ff88 12px solid;
+    border-radius: 35px;
+    margin: 0 auto;
+    z-index: -1;
+    position: relative;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    transition: all 1s ease;
+}
+
+.nav-content {
+    position: fixed;
+    bottom: 6px;
+    overflow: hidden;
+    z-index: 100;
+    background-color: #2e2e31;
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-color: rgb(2, 255, 136);
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+}
+
+.nav-header:hover {
+    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+}
+
+.nav-header:hover~.main-content {
+    padding-top: 70px;
+}
+
+.nav-content a {
+    float: left;
+    display: block;
+    color: #B3B3B3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.nav-content a:hover {
+    background-color: #02ff88;
+    color: #242424;
+}
+
+.nav-content a.active {
+    background-color: #02ff88;
+    color: #242424;
+}
+*/

@@ -1,0 +1,421 @@
+/* About Section */
+
+.about-frame {
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #2f2e2f;
+    color: #B3B3B3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+.profile-card,
+.prog-card {
+    background-color: #2e2e31;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #B3B3B3;
+    text-align: center;
+    width: 300px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+/*Progress-bar */
+
+.progress {
+    background: rgba(255, 255, 255, 0.1);
+    justify-content: flex-start;
+    border-radius: 100px;
+    align-items: center;
+    position: relative;
+    padding: 0 5px;
+    display: flex;
+    height: 20px;
+    width: 160px;
+    margin-top: 14px;
+}
+
+.progress-value {
+    animation: progress-bar-load 3s normal forwards;
+    box-shadow: 0 10px 40px -10px #fff;
+    border-radius: 100px;
+    background: #02ff88;
+    height: 10px;
+    width: 0;
+    -webkit-animation: progress-bar-load 3s normal forwards;
+}
+
+.prog-language {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-progress-bar {
+    margin-left: 10px;
+    border-left: #02ff88;
+    border-left-width: 100px;
+}
+
+.contact-items {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.contact-items i {
+    display: flex;
+    font-size: 20px;
+    color: #02ff88;
+    margin-bottom: 5px;
+    margin-right: 10px;
+}
+
+@keyframes progress-bar-load {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: var(--progress-width);
+    }
+}
+
+
+/* Different progress bars */
+
+.progress-bar1 {
+    --progress-width: 50%;
+}
+
+.progress-bar2 {
+    --progress-width: 60%;
+}
+
+.progress-bar3 {
+    --progress-width: 70%;
+}
+
+.progress-bar4 {
+    --progress-width: 80%;
+}
+
+.progress-bar5 {
+    --progress-width: 90%;
+}
+
+.progress-bar6 {
+    --progress-width: 100%;
+}
+
+@media screen and (max-width: 884px) and (orientation: portrait) {
+    .profile-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 1139px) {
+    .prog-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.profile-social {
+    display: flex;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+}
+
+.profile-social-content,
+.profile-social-content a {
+    display: flex;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.profile-social ion-icon {
+    color: #05ff82;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px;
+}
+
+.profile-card h2 {
+    color: #02ff88;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.profile-card p {
+    margin: 5px 0;
+}
+
+.contact-details {
+    margin-top: 20px;
+}
+
+.contact-item {
+    display: flex;
+    margin: 10px 0;
+}
+
+.contact-item ion-icon {
+    color: #05ff82;
+    margin-right: 10px;
+}
+
+.about-content {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    color: #B3B3B3;
+    flex: 2;
+    min-width: 300px;
+}
+
+.about-content h2 {
+    color: #02ff88;
+    margin-bottom: 20px;
+}
+
+.services-section {
+    width: 100%;
+}
+
+.services-section h2 {
+    color: #02ff88;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.services-contents {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+    scroll-snap-align: center;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+    /* flex: 1 1 calc(50% - 20px); */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #B3B3B3;
+    transition: transform 0.3s;
+    -webkit-transition: transform 0.3s;
+    -moz-transition: transform 0.3s;
+    -ms-transition: transform 0.3s;
+    -o-transition: transform 0.3s;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+@media screen and (max-width: 884px) and (max-device-width: 914px) and (orientation: portrait) {
+    .service-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+}
+
+.service-card ion-icon {
+    font-size: 36px;
+    color: #02ff88;
+    margin-bottom: 10px;
+}
+
+.service-card h3 {
+    margin: 10px 0;
+    color: #02ff88;
+}
+
+.service-card p {
+    margin: 0;
+}
+
+
+/* ABOUT-Testimonials */
+
+.testimonials-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.testimonials-content h2 {
+    text-align: center;
+    border-bottom: 1px solid #02ff88;
+    margin: 0px;
+}
+
+.testimonial-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 20px;
+    width: 100%;
+    max-width: calc(100% - 40px);
+    background-color: #2f2e2f;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.testimonial-pic {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.testimonial-text {
+    padding-left: 15px;
+}
+
+.testimonial-text p {
+    margin: 0;
+}
+
+.testimonial-text-name {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.testimonial-text-stars {
+    gap: 0;
+    padding-top: 20px;
+}
+
+.testimonial-text-stars ion-icon {
+    color: gold;
+}
+
+.testimonials-section {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1f1f1f;
+    color: #B3B3B3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+/* ABOUT-CLIENTS */
+
+.clients-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #2f2e2f;
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+@media screen and (max-width: 500px) and (max-device-width: 914px) and (orientation: portrait) {
+    .clients-card {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+.clients-section h2 {
+    text-align: center;
+    border-bottom: 1px solid #02ff88;
+    margin: 0px;
+}
+
+.clients-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.clients-card p {
+    color: #02ff88;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 0;
+}
+
+.clients-contents {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+}
+
+.clients-section {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    background-color: #1f1f1f;
+    color: #B3B3B3;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+}
