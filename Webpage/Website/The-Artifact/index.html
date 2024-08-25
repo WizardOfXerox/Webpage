@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - The Artifact&#39;s Guts</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<canvas id="canvas"></canvas>
+<textarea id="codeEditor" class="editor" spellcheck="false" autocorrect="off" autocapitalize="off" translate="no" oninput="render()"></textarea>
+<pre id="error"></pre>
+<div id="indicator"></div>
+<div id="controls">
+	<div class="controls">
+		<input id="btnToggleView" class="icon" type="checkbox" name="toggleView" onclick="toggleView()">
+		<input id="btnToggleResolution" class="icon" type="checkbox" name="toggleResolution" onchange="toggleResolution()">
+		<input id="btnReset" class="icon" type="checkbox" name="reset" onclick="reset()">
+	</div>
+</div>
+<script type="x-shader/x-fragment">#version 300 es
+/*********
+* made by Matthias Hurrle (@atzedent)
+*/ 
+precision highp float;
+out vec4 O;
+uniform float time;
+uniform vec2 resolution;
+uniform vec2 move;
+uniform int pointerCount;
+#define P pointerCount
+#define FC gl_FragCoord.xy
+#define R resolution
+#define T time
+#define N normalize
+#define S smoothstep
+#define rot(a) mat2(cos(a-vec4(0,11,33,0)))
+
+float smin(float a, float b, float k) {
+	float h = clamp(.5+.5*(b-a)/k,.0,1.);
+	return mix(b,a,h)-k*h*(1.-h);
+}
+
+vec3 smthng(vec3 a, vec3 b, float k) {
+	vec3 h=clamp(.5+.5*(b/a),.0,1.);
+	return mix(b,a,h)-k*h*(1.-h);
+}
+
+vec3 kifs(vec3 p) {
+	for (int i=0; i<2; i++) {
+		p.yz*=rot(T);
+		p.xz*=rot(T);
+		p=smthng(p,-p,-1.);
+		p-=vec3(.26,.02,.1);
+	}
+	return p;
+}
+
+float box(vec3 p, vec3 s, float r) {
+	p=abs(p)-(s-r);
+
+	return length(max(p,.0))+min(.0,max(max(p.x,p.y),p.z))-r;
+}
+
+float mspo(vec3 p, vec3 s, float r, float l) {
+	const float k=.25;
+
+	float
+	d=box(p,s,r),
+	res=d,
+	f=1.,
+	i=.0;
+
+	for(; i++<l;) {
+		vec3
+		a=mod(p*f,2.)-1.,
+		r=abs(1.-3.*abs(a));
+
+		f*=3.;
+
+		float
+		da=max(r.x,r.y),
+		db=max(r.y,r.z),
+		dc=max(r.z,r.x),
+		c=(smin(da,smin(db,dc,k),k)-.75)/f;
+
+		if(c>d) d=c, res = c;
+	}
+
+	return res;
+}
+
+float glow=.0;
+float map(vec3 p) {	
+	vec3 st=p;
+	st=kifs(st);
+	float t=T*2., k=.025,
+	sp=length(st-vec3(.5*sin(t), .125*cos(t), -.5*(sin(T)*.125+.8)))-k;
+	sp=min(sp,length(st-vec3(pow(.15*-cos(t*.7),2.), .125*-sin(t), 0))-k);
+	sp=min(sp,length(st-vec3(pow(.125*cos(t*1.1),2.), .125*sin(t), .5*(cos(T)*.125+.8)))-k);
+	glow+=.05/(.05+sp*sp*80.);
+	return min(mspo(p, vec3(1),.005,3.), sp);
+}
+
+float calcAO(in vec3 pos, in vec3 nor) {
+	float occ=.0, sca=1.;
+	for(float i=.0; i++<5.;) {
+		float
+		h=.01+.12*float(i)/4.,
+		d=map(pos+h*nor);
+		occ+=(h-d)*sca;
+		sca*=.95;
+		if(occ>.35) break;
+	}
+	return clamp(1.-3.*occ,.0,1.)*(.5+.5*nor.y);
+}
+
+vec3 norm(vec3 p) {
+	float h=1e-3; vec2 k=vec2(-1,1);
+	return N(
+		k.xyy*map(p+k.xyy*h)+
+		k.yxy*map(p+k.yxy*h)+
+		k.yyx*map(p+k.yyx*h)+
+		k.xxx*map(p+k.xxx*h)
+	);
+}
+
+void cam(inout vec3 p) {
+	p.yz*=rot(move.y*6.3/min(R.x,R.y)+(P>0?.0:sin(T*.5)*.5+.5));
+	p.xz*=rot(-move.x*6.3/min(R.x,R.y)+(P>0?.0:T*.7));
+}
+
+void main() {
+	vec2 uv=(FC-.5*R)/min(R.x,R.y);
+	vec3 col=vec3(0),
+	p=vec3(0,0,-(-S(-1.,-2.,log(2.*pow(sin(T*.2),2.))))-4.),
+	ro=p,
+	rd=N(vec3(uv,1));
+	cam(p); cam(rd);
+	
+	float dd=.0;
+	for (float i=.0; i++<400.;) {
+		float d=map(p);
+		if (d<1e-3 || d>12.) break;
+		p+=rd*d;
+		dd+=d;
+	}
+	
+	vec3 n=norm(p),
+	lp=vec3(0,1,-3);
+	cam(lp);
+	vec3
+	l=N(lp-p);
+
+	float
+	falloff=.1+10./dot(lp-p,lp-p),
+	diffuse=clamp(dot(l,n),.0,1.),
+	occlusion=calcAO(p,n);
+	
+	col+=diffuse*occlusion*falloff;
+
+	vec3 ambient=vec3(1,.95,.8);
+	col+=.1*ambient;
+		
+	if (dd>12.) col=mix(vec3(0),vec3(.35,.5,.65),S(.7,.0,length(uv)));
+	
+	col+=vec3(.95,.4,.8)*glow*glow;
+	
+	O=vec4(col,1);
+}</script>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

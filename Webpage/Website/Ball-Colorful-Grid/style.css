@@ -1,0 +1,181 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  perspective: 800px;
+  overflow: hidden;
+  
+  * {
+    transform-style: preserve-3d;
+  }
+}
+
+.scene {
+  position: relative;
+  -webkit-animation: sceneRotate var(--sceneRotateDuration) infinite linear;
+          animation: sceneRotate var(--sceneRotateDuration) infinite linear;
+  
+  --ballRotateDuration: 4s;
+  --sceneRotateDuration: 48s;
+}
+
+@-webkit-keyframes sceneRotate {
+  0%  { transform: rotateX(60deg) rotateZ(0deg); }
+  100% { transform: rotateX(60deg) rotateZ(360deg); }
+}
+
+@keyframes sceneRotate {
+  0%  { transform: rotateX(60deg) rotateZ(0deg); }
+  100% { transform: rotateX(60deg) rotateZ(360deg); }
+}
+
+.grid {
+  position: absolute;
+  inset: -47.5vmin;
+  aspect-ratio: 1;
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  gap: 1vmin;
+
+  & > i {
+    --dist: sqrt(var(--x) * var(--x) + var(--y) * var(--y));
+    --height: calc(cos(var(--dist) / 1.8) - 1);
+    --angle: calc(sin(atan2(var(--y), var(--x)) / -6));
+    --delay: calc((var(--angle) - 1.75) * var(--ballRotateDuration));
+    --hue: calc(var(--angle) * 360);
+      
+    width: 100%; height: 100%;
+    overflow: hidden;
+    background-color: hsl(var(--hue) 100% 20%);
+    -webkit-animation: i var(--ballRotateDuration) var(--delay) infinite ease-in-out;
+            animation: i var(--ballRotateDuration) var(--delay) infinite ease-in-out;
+
+    & > i:nth-child(1) {
+      position: absolute;
+      inset: 0;
+      background-color: #fff;
+      -webkit-animation: light var(--ballRotateDuration) var(--delay) infinite ease-in-out;
+              animation: light var(--ballRotateDuration) var(--delay) infinite ease-in-out;
+    }
+    
+    & > i:nth-child(2) {
+      position: absolute;
+      inset: -10vmin;
+      background-image: radial-gradient(#000e 5vmin, #0000 12.5vmin);
+      -webkit-animation: shadow var(--ballRotateDuration) infinite linear;
+              animation: shadow var(--ballRotateDuration) infinite linear;
+    }
+    
+    &:nth-child(16n + 1) { --x: -7.5; }
+    &:nth-child(16n + 2) { --x: -6.5; }
+    &:nth-child(16n + 3) { --x: -5.5; }
+    &:nth-child(16n + 4) { --x: -4.5; }
+    &:nth-child(16n + 5) { --x: -3.5; }
+    &:nth-child(16n + 6) { --x: -2.5; }
+    &:nth-child(16n + 7) { --x: -1.5; }
+    &:nth-child(16n + 8) { --x: -0.5; }
+    &:nth-child(16n + 9) { --x: 0.5; }
+    &:nth-child(16n + 10) { --x: 1.5; }
+    &:nth-child(16n + 11) { --x: 2.5; }
+    &:nth-child(16n + 12) { --x: 3.5; }
+    &:nth-child(16n + 13) { --x: 4.5; }
+    &:nth-child(16n + 14) { --x: 5.5; }
+    &:nth-child(16n + 15) { --x: 6.5; }
+    &:nth-child(16n + 16) { --x: 7.5; }
+    
+    &:nth-child(-n + 16) { --y: -7.5; }
+    &:nth-child(n + 17):nth-child(-n + 32) { --y: -6.5; }
+    &:nth-child(n + 33):nth-child(-n + 48) { --y: -5.5; }
+    &:nth-child(n + 49):nth-child(-n + 64) { --y: -4.5; }
+    &:nth-child(n + 65):nth-child(-n + 80) { --y: -3.5; }
+    &:nth-child(n + 81):nth-child(-n + 96) { --y: -2.5; }
+    &:nth-child(n + 97):nth-child(-n + 112) { --y: -1.5; }
+    &:nth-child(n + 113):nth-child(-n + 128) { --y: -0.5; }
+    &:nth-child(n + 129):nth-child(-n + 144) { --y: 0.5; }
+    &:nth-child(n + 145):nth-child(-n + 160) { --y: 1.5; }
+    &:nth-child(n + 161):nth-child(-n + 176) { --y: 2.5; }
+    &:nth-child(n + 177):nth-child(-n + 192) { --y: 3.5; }
+    &:nth-child(n + 193):nth-child(-n + 208) { --y: 4.5; }
+    &:nth-child(n + 209):nth-child(-n + 224) { --y: 5.5; }
+    &:nth-child(n + 225):nth-child(-n + 240) { --y: 6.5; }
+    &:nth-child(n + 241) { --y: 7.5; }
+  }
+}
+
+@-webkit-keyframes shadow {
+  from { transform: translate(calc(var(--x) * -6.2vmin), calc(var(--y) * -6.2vmin)) rotateZ(360deg) translateX(-36vmin); }
+  to { transform: translate(calc(var(--x) * -6.2vmin), calc(var(--y) * -6.2vmin)) rotateZ(0deg) translateX(-36vmin); }
+}
+
+@keyframes shadow {
+  from { transform: translate(calc(var(--x) * -6.2vmin), calc(var(--y) * -6.2vmin)) rotateZ(360deg) translateX(-36vmin); }
+  to { transform: translate(calc(var(--x) * -6.2vmin), calc(var(--y) * -6.2vmin)) rotateZ(0deg) translateX(-36vmin); }
+}
+
+@-webkit-keyframes light {
+  0%, 100% { opacity: 1; }
+  25% { opacity: calc((var(--height, 0) + 2) * 0.3 + 0.1); }
+
+}
+
+@keyframes light {
+  0%, 100% { opacity: 1; }
+  25% { opacity: calc((var(--height, 0) + 2) * 0.3 + 0.1); }
+
+}
+
+@-webkit-keyframes i {
+  0%, 100% { transform: translateZ(2.5vmin); }
+  25% { transform: translateZ(calc(var(--height, 0) * 7.5vmin)); }
+}
+
+@keyframes i {
+  0%, 100% { transform: translateZ(2.5vmin); }
+  25% { transform: translateZ(calc(var(--height, 0) * 7.5vmin)); }
+}
+
+.ball {
+  position: absolute;
+  translate: 0 0 -7.5vmin;
+  -webkit-animation: ballRotate var(--ballRotateDuration) infinite linear;
+          animation: ballRotate var(--ballRotateDuration) infinite linear;
+  
+  i {
+    position: absolute;
+    inset: -7.5vmin;
+    border-radius: 50%;
+    background-color: #ddd;
+    background-image: radial-gradient(circle at top, #0000, #000);
+    -webkit-animation: ballCounterRotate var(--sceneRotateDuration) infinite linear;
+            animation: ballCounterRotate var(--sceneRotateDuration) infinite linear;
+  }
+}
+
+@-webkit-keyframes ballRotate {
+  from { transform: rotateZ(360deg) translateX(-33vmin) rotateZ(0deg); }
+  to { transform: rotateZ(0deg) translateX(-33vmin) rotateZ(360deg); }
+}
+
+@keyframes ballRotate {
+  from { transform: rotateZ(360deg) translateX(-33vmin) rotateZ(0deg); }
+  to { transform: rotateZ(0deg) translateX(-33vmin) rotateZ(360deg); }
+}
+
+@-webkit-keyframes ballCounterRotate {
+  from { transform: rotateZ(360deg) rotateX(-60deg); }
+  to { transform: rotateZ(0deg) rotateX(-60deg); }
+}
+
+@keyframes ballCounterRotate {
+  from { transform: rotateZ(360deg) rotateX(-60deg); }
+  to { transform: rotateZ(0deg) rotateX(-60deg); }
+}

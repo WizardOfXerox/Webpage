@@ -6,18 +6,23 @@ import compression from 'compression';
 import helmet from 'helmet';
 import chalk from 'chalk';
 import { table } from 'table';
+import cors from 'cors';
 import browserSync from 'browser-sync';
 import liveServer from 'live-server';
+import puppeteer from 'puppeteer'; // Import Puppeteer to capture screenshots
+import fs from 'fs'; // File system module to handle file operations
 
 dotenv.config(); // Load environment variables from .env file
 
 const app = express();
 const port = process.env.PORT || 3000;
 const defaultPort = 3001;
+const activeConnections = new Set(); // To store unique IP addr
 
 // Middleware
 app.use(morgan('dev')); // Logging
 app.use(compression()); // Compression
+app.use(cors()); // Allow all origins
 app.use(helmet()); // Security
 app.use(express.static(path.join(path.resolve(), 'Webpage'))); // Serve static files from Webpage folder
 
@@ -55,12 +60,103 @@ const tableData = [
 // Display the table
 console.log(table(tableData));
 
-// Routes
-app.get('/', (req, res) => {
-    res.sendFile(path.join(path.resolve(), 'Webpage', 'index.html'));
+// Middleware to log connections
+app.use((req, res, next) => {
+    const ip = req.ip || req.socket.remoteAddress;
+    activeConnections.add(ip); // Add IP to the set
+    console.log(`New connection from ${ip}`);
+    res.on('finish', () => {
+        activeConnections.delete(ip); // Remove IP from the set when connection is finished
+        console.log(`Connection from ${ip} ended`);
+    });
+    next();
 });
 
-// Start Express Server
+
+// Directory to save screenshots
+const screenshotDir = path.join(path.resolve(), './Webpage/Screenshots');
+app.use('/Screenshots', express.static(screenshotDir));
+
+// Ensure the screenshot directory exists
+if (!fs.existsSync(screenshotDir)) {
+    fs.mkdirSync(screenshotDir);
+}
+
+// Screenshot route
+// http://localhost:3000/screenshot?file=Webpage/Website/3d-gallery/index.html
+// http://localhost:3000/screenshot?url=https://Wwww.google.com
+// Still on working progress. Idea is to generate screenshot of every website inside ./Website.
+app.get('/screenshot', async(req, res) => {
+    const url = req.query.url;
+    const file = req.query.file; // New query parameter for local file
+
+    if (!url && !file) {
+        console.log(chalk.red('No URL or file path provided.'));
+        return res.status(400).send('URL or file path is required');
+    }
+
+    let browser;
+    try {
+        console.log(chalk.blue(`Taking screenshot of: ${url || file}`));
+
+        // Launch the browser
+        browser = await puppeteer.launch({
+            headless: true, // Run in headless mode
+            args: ['--no-sandbox', '--disable-setuid-sandbox'] // Arguments for better compatibility
+        });
+
+        const page = await browser.newPage();
+
+        // Set a viewport size if necessary
+        await page.setViewport({ width: 1280, height: 800 });
+
+        if (file) {
+            // If a local file is specified, load it using the file:// protocol
+            const filePath = path.join(path.resolve(), file);
+
+            // Check if the file exists
+            if (!fs.existsSync(filePath)) {
+                console.log(chalk.red(`File not found: ${filePath}`));
+                return res.status(404).send('File not found');
+            }
+
+            await page.goto(`file://${filePath}`, {
+                waitUntil: 'networkidle0', // Wait for the network to be completely idle
+                timeout: 30000 // 60 seconds timeout for navigation
+            });
+        } else if (url) {
+            // If a URL is specified, load the URL
+            await page.goto(url, {
+                waitUntil: 'networkidle0', // Wait for network to be completely idle
+                timeout: 30000 // 60 seconds timeout for navigation
+            });
+        }
+
+        // Define the filename with a timestamp to avoid overwriting
+        const timestamp = new Date().toISOString().replace(/[:.]/g, '-'); // Replace ':' and '.' to make it filesystem-friendly
+        const screenshotFilename = `screenshot-${timestamp}.png`;
+        const screenshotPath = path.join(screenshotDir, screenshotFilename);
+
+        // Capture the screenshot and save it to the specified path
+        await page.screenshot({ path: screenshotPath, fullPage: true });
+
+        await browser.close();
+
+        // Send HTML response with the image URL
+        const relativePath = `/Screenshots/${screenshotFilename}`;
+        res.status(200).send(`<img src="${relativePath}" alt="Screenshot"></img>`);
+
+        console.log(chalk.green('Screenshot captured and saved successfully at:'), screenshotPath);
+    } catch (error) {
+        console.error(chalk.red('Error capturing screenshot:', error));
+        if (browser) await browser.close();
+        res.status(500).send('Failed to capture screenshot');
+    }
+});
+
+
+// Other routes and server configuration...
+
 app.listen(port, () => {
             console.log(chalk.green(`Express server running at ${chalk.blue(`http://localhost:${port}`)}`));
 
@@ -68,6 +164,7 @@ app.listen(port, () => {
         browserSync.create().init({
             proxy: `http://localhost:${port}`, // Proxy the Express server
             files: ['Webpage/**/*.*'], // Watch for changes in Webpage folder
+            ignore: path.join(path.resolve(), 'Webpage/Screenshots'),
             port: defaultPort, // Browser-Sync's port
             open: true, // Open the browser on start
             notify: true, // Enable notifications
@@ -84,10 +181,11 @@ app.listen(port, () => {
             liveServer.start({
                 port: defaultPort, // Live-server's port
                 root: path.join(path.resolve(), 'Webpage'), // Directory to serve
-                open: true, // Open the browser on start
+                ignore: path.join(path.resolve(), 'Webpage/Screenshots'),
+                open: false, // Open the browser on start
                 logLevel: 3, // Log level (1 = errors only, 2 = errors and warnings, 3 = errors, warnings, and info)
             });
-        
+
             console.log(chalk.green(`Live-Server running at ${chalk.blue(`http://localhost:${defaultPort}`)}`));
             console.log(chalk.yellow('Press Ctrl+C to stop the server.'));
         } catch (err) {
