@@ -1,0 +1,182 @@
+<div class="anime_list">
+  <!-- Titulo -->
+<div class="title" style="background-image: url('https://de7i3bh7bgh0d.cloudfront.net/2018/04/23/17/49/21/85b4c3c6-8869-442f-b48b-c39930edd59a/p000_Cov_042318_SPLASH.jpg');">
+      <div style="color:#fff;background:rgba(0,0,0,.7);padding:100px 10px 50px 10px;">
+        <h1>List of animes</h1>
+        <!---- BUSCADOR ---->
+        <center>
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..." title="Buscar anime..."></center>
+      </div>
+</div> 
+
+<!-- ETIQUETAS -->
+<div class="contenedor">
+<div id="myBtnContainer">
+<div class="ABC">
+  <button class="btn" onclick="filterSelection('#')">#</button>
+  <button class="btn" onclick="filterSelection('A')"> A</button>
+  <button class="btn" onclick="filterSelection('B')"> B</button>
+  <button class="btn" onclick="filterSelection('C')"> C</button>
+  <button class="btn" onclick="filterSelection('D')"> D</button>
+  <button class="btn" onclick="filterSelection('E')"> E</button>
+  <button class="btn" onclick="filterSelection('F')"> F</button>
+  <button class="btn" onclick="filterSelection('G')"> G</button>
+  <button class="btn" onclick="filterSelection('H')"> H</button>
+  <button class="btn" onclick="filterSelection('I')"> I</button>
+  <button class="btn" onclick="filterSelection('J')"> J</button>
+  <button class="btn" onclick="filterSelection('K')"> K</button>
+  <button class="btn" onclick="filterSelection('L')"> L</button>
+  <button class="btn" onclick="filterSelection('M')"> M</button>
+  <button class="btn" onclick="filterSelection('N')"> N</button>
+  <button class="btn" onclick="filterSelection('O')"> O</button>
+  <button class="btn" onclick="filterSelection('P')"> P</button>
+  <button class="btn" onclick="filterSelection('Q')"> Q</button>
+  <button class="btn" onclick="filterSelection('R')"> R</button>
+  <button class="btn" onclick="filterSelection('S')"> S</button>
+  <button class="btn" onclick="filterSelection('T')"> T</button>
+  <button class="btn" onclick="filterSelection('U')"> U</button>
+  <button class="btn" onclick="filterSelection('V')"> V</button>
+  <button class="btn" onclick="filterSelection('W')"> W</button>
+  <button class="btn" onclick="filterSelection('X')"> X</button>
+  <button class="btn" onclick="filterSelection('Y')"> Y</button>
+  <button class="btn" onclick="filterSelection('Z')"> Z</button>
+</div>
+<div class="TYPE">
+  <button class="btn active" onclick="filterSelection('all')"> Todos</button>
+  <button class="btn" onclick="filterSelection('TV')"> TV</button>
+  <button class="btn" onclick="filterSelection('MOVIE')"> Peliculas</button>
+  <button class="btn" onclick="filterSelection('0V4')"> OVA</button>
+  <button class="btn" onclick="filterSelection('0N4')"> ONA</button>
+  <button class="btn" onclick="filterSelection('ESPECIAL')"> Especial</button>
+</div>
+</div>
+
+<!-- ANIMES -->
+<div class="row" id="myMenu">
+  <!--  ANIME  -->
+  <div class="column A TV">
+    <div class="content">
+      <a href="">
+      <figure><img src="https://animeblix.com/uploads/2019/07/1031140.617693001562340674_l.jpg" alt="Mountains"/><small>僕のヒーローアカデミア</small></figure>
+      <h4>u  nombre que esta muy kargo</h4>
+        
+      </a>
+      <span class="type"><small id="anime">Anime</small></span>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+  <!--  ANIME  -->
+  <div class="column B MOVIE">
+    <div class="content">
+      <a href="">
+       <figure><img src="https://animeblix.com/uploads/2019/09/1711510.518693001567894311_l.jpg" alt="Mountains"/><small>進撃の巨人</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="movie">Pelicula</small></span>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+    <!--  ANIME  -->
+  <div class="column A ESPECIAL">
+    <div class="content">
+      <a href="">
+      <figure><img src="https://animeblix.com/uploads/2019/07/1031140.617693001562340674_l.jpg" alt="Mountains"/><small>僕のヒーローアカデミア</small></figure>
+      <h4>u  nombre que esta muy kargo</h4>
+        
+      </a>
+      <span class="type"><small id="especial">Especial</small></span>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+  <!--  ANIME  -->
+  <div class="column B 0V4">
+    <div class="content">
+      <a href="">
+       <figure><img src="https://animeblix.com/uploads/2019/09/1711510.518693001567894311_l.jpg" alt="Mountains"/><small>進撃の巨人</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="ova">OVA</small></span>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+    <!--  ANIME  -->
+  <div class="column A 0N4">
+    <div class="content">
+      <a href="">
+      <figure><img src="https://animeblix.com/uploads/2019/07/1031140.617693001562340674_l.jpg" alt="Mountains"/><small>僕のヒーローアカデミア</small></figure>
+      <h4>u  nombre que esta muy kargo</h4>
+        
+      </a>
+      <span class="type"><small id="ona">ONA</small></span>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+  <!--  ANIME  -->
+  <div class="column B 0V4">
+    <div class="content">
+      <a href="">
+       <figure><img src="https://animeblix.com/uploads/2019/09/1711510.518693001567894311_l.jpg" alt="Mountains"/><small>進撃の巨人</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="ova">Type</small></span>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+<!-- END ANIMES -->
+</div>
+</div>
+  
+  
+
+</div>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script> 
+<link href='https://rawcdn.githack.com/ZeruBlogs/anime_page/0669789160d6be44a03300457c65ea0ae68f9bad/tooltip.css' rel='stylesheet'/><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&amp;subset=japanese" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Didact+Gothic|Nunito:300,400,600,700,800|Quicksand:400,500,700' rel='stylesheet'/>

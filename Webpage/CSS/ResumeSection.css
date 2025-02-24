@@ -64,6 +64,7 @@
     flex-wrap: wrap;
     overflow: hidden;
     flex-direction: column;
+    padding: calc(2% - 20px);
 }
 
 .experience-card-container {
@@ -74,6 +75,7 @@
     scroll-snap-type: x mandatory;
     flex-wrap: wrap;
     overflow: hidden;
+    padding: calc(2% - 20px);
 }
 
 .experience,

@@ -22,22 +22,42 @@
     /* padding-bottom: 20px; */
     scroll-snap-type: x mandatory;
     flex-wrap: wrap;
-    flex-direction: row;
     overflow: hidden;
+    padding: calc(2% - 20px);
 }
 
-.ai-card,
-.book-card,
-.website-card {
+.ai-card {
     background-color: #2f2e2f;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     width: 300px;
-    max-height: 500px;
+    max-height: 600px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    scroll-snap-align: center;
+    transition: transform 0.3s, flex-basis 0.3s;
+    animation: slideDown 0.5s ease;
+    margin: 8px 8px;
+    -webkit-transition: transform 0.3s, flex-basis 0.3s;
+    -moz-transition: transform 0.3s, flex-basis 0.3s;
+    -ms-transition: transform 0.3s, flex-basis 0.3s;
+    -o-transition: transform 0.3s, flex-basis 0.3s;
+    -webkit-animation: slideDown 0.5s ease;
+}
+
+.website-card,
+.book-card {
+    background-color: #2f2e2f;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
     scroll-snap-align: center;
     transition: transform 0.3s, flex-basis 0.3s;
     animation: slideDown 0.5s ease;
@@ -48,10 +68,17 @@
     -o-transition: transform 0.3s, flex-basis 0.3s;
 }
 
-@media screen and (max-width: 884px) and (max-device-width: 914px) and (orientation: portrait) {
+.ai-card,
+.book-card,
+.website-card {
+    flex: 1 1 calc(25% - 20px);
+}
+
+@media screen and (max-width: 884px) {
     .ai-card,
-    .book-card {
-        flex: 1 1 calc(50% - 20px);
+    .book-card,
+    .website-card {
+        flex: 1 1 calc(100% - 20px);
     }
 }
 
@@ -59,13 +86,15 @@
 .book-card img,
 .website-card img {
     width: 100%;
+    max-width: 100%;
     height: auto;
-    max-height: 150px;
+    max-height: 300px;
     object-fit: cover;
     object-position: 50% 0%;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    aspect-ratio: 1/1;
 }
 
 .ai-card:hover,
@@ -82,12 +111,6 @@
 .book,
 .website {
     margin-bottom: 40px;
-}
-
-.project img,
-.book img {
-    max-width: 100%;
-    height: auto;
 }
 
 .section-c1 {
@@ -107,6 +130,7 @@
     flex-grow: 1;
     border-top-style: groove;
     border-color: #02ff88;
+    width: 100%;
 }
 
 .chapter-list::-webkit-scrollbar {
@@ -127,12 +151,11 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* max-height: calc(100% - 150px); */
-    max-height: 100%;
+    max-height: calc(100% - 20px);
     text-align: center;
     align-items: center;
     flex-grow: 1;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .ai-card-content h4,
@@ -155,10 +178,14 @@
 .book-card-content p,
 .website-card-content p {
     margin: 5px 0;
-    overflow: hidden;
+    display: inline;
+    -webkit-line-clamp: 10;
     text-overflow: ellipsis;
-    /* white-space: nowrap; */
-    text-decoration: none;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    /* Important for long words! */
 }
 
 .ai-card-content a,
@@ -170,16 +197,11 @@
     color: #B3B3B3;
 }
 
-h2 {
-    margin-top: 0;
-    text-wrap: wrap;
-}
-
 
 /*Website*/
 
-.container {
-    width: 300px;
+.iframe-container {
+    width: 100%;
     height: 270px;
     overflow: hidden;
     /*Hideanyoverflowingcontent*/

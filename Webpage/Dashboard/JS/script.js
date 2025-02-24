@@ -1,64 +1,32 @@
-//Calculator
-function addition() {
-    var add1 = parseFloat(document.getElementById("add1").value);
-    var add2 = parseFloat(document.getElementById("add2").value);
-    var result = add1 + add2;
-    document.getElementById("result").innerHTML = "Result: " + result;
-}
-
-function subtraction() {
-    var sub1 = parseFloat(document.getElementById("sub1").value);
-    var sub2 = parseFloat(document.getElementById("sub2").value);
-    var result = sub1 - sub2;
-    document.getElementById("result").innerHTML = "Result: " + result;
-}
-
-function multiplication() {
-    var mul1 = parseFloat(document.getElementById("mul1").value);
-    var mul2 = parseFloat(document.getElementById("mul2").value);
-    var result = mul1 * mul2;
-    document.getElementById("result").innerHTML = "Result: " + result;
-}
-
-function division() {
-    var div1 = parseFloat(document.getElementById("div1").value);
-    var div2 = parseFloat(document.getElementById("div2").value);
-    if (div2 === 0) {
-        document.getElementById("result").innerHTML = "Error: Division by zero is not allowed";
-    } else {
-        var result = div1 / div2;
-        document.getElementById("result").innerHTML = "Result: " + result;
-    }
-}
-
-function percentage() {
-    var num = parseFloat(document.getElementById("num").value);
-    var percent = parseFloat(document.getElementById("percent").value);
-    var result = (num * percent) / 100;
-    document.getElementById("result").innerHTML = "Result: " + result;
-}
-
 //Navigations
 
 document.addEventListener("DOMContentLoaded", function() {
-    const navLinks = document.querySelectorAll(".nav-link");
-    console.log("Navigation links:", navLinks); // Debugging
+    // Query all relevant elements
+    const navLinks = document.querySelectorAll(".nav-link, .nav-link-icon");
+
+    // Debugging: Log all nav links
+    console.log("Navigation links:", navLinks);
 
     navLinks.forEach((link) => {
         link.addEventListener("click", function(event) {
             event.preventDefault();
             const target = this.getAttribute("data-target");
-            console.log("Clicked link data-target:", target); // Debugging
 
+            // Debugging: Log clicked link's data-target
+            console.log("Clicked link data-target:", target);
+
+            // Remove 'active' class from all nav links
             navLinks.forEach((link) => link.classList.remove("active"));
+
+            // Add 'active' class to the clicked link
             this.classList.add("active");
 
+            // Remove 'active' class from all sections
             const sections = document.querySelectorAll(".section");
             console.log("Sections:", sections); // Debugging
-            sections.forEach((section) => {
-                section.classList.remove("active");
-            });
+            sections.forEach((section) => section.classList.remove("active"));
 
+            // Add 'active' class to the target section
             const targetSection = document.getElementById(target);
             if (targetSection) {
                 targetSection.classList.add("active");
@@ -73,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll(".creation-nav-link-btn");
     navLinks.forEach((link) => {
@@ -82,9 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
             navLinks.forEach((link) => link.classList.remove("active"));
             this.classList.add("active");
             const sections = document.querySelectorAll(".section-c1");
-            sections.forEach((section) => {
-                section.classList.remove("active");
-            });
+            sections.forEach((section) => section.classList.remove("active"));
             document.getElementById(target).classList.add("active");
             topFunction();
         });
@@ -102,9 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 link.classList.remove("active");
             });
             const sections = document.querySelectorAll(".section");
-            sections.forEach((section) => {
-                section.classList.remove("active");
-            });
+            sections.forEach((section) => section.classList.remove("active"));
             document.getElementById(target).classList.add("active");
 
             // Add active class to the corresponding.nav-link element
@@ -118,8 +83,109 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener("keydown", (event) => {
+    const navLinks = document.querySelectorAll(".nav-link"); // Get NodeList directly
+    const filteredNavLinks = Array.prototype.filter.call(navLinks, link => {
+        return link.getAttribute("data-target") !== "admin";
+    });
+
+    let activeIndex = -1;
+
+    // Find the currently active link among the filtered links
+    filteredNavLinks.forEach((link, index) => {
+        if (link.classList.contains("active")) {
+            activeIndex = index;
+        }
+    });
+
+    if (event.key === 'ArrowDown') {
+        event.preventDefault(); // Prevent default behavior
+
+        if (activeIndex > 0) { // If there is a previous link in the filtered list
+            const previousIndex = activeIndex - 1; // Index of the previous link
+
+            // Remove the active class from the current active link
+            filteredNavLinks[activeIndex].classList.remove("active");
+
+            // Add the active class to the previous link
+            filteredNavLinks[previousIndex].classList.add("active");
+
+            // Get the target section from the previous link
+            const target = filteredNavLinks[previousIndex].getAttribute("data-target");
+
+            // Remove active class from all sections
+            const sections = document.querySelectorAll(".section");
+            sections.forEach((section) => section.classList.remove("active"));
+
+            // Add active class to the target section
+            const targetSection = document.getElementById(target);
+            if (targetSection) {
+                targetSection.classList.add("active");
+                console.log("Showing section:", target); // Debugging
+            } else {
+                console.error("Target section not found:", target); // Debugging
+            }
+
+            console.log("Active Index:", activeIndex);
+            console.log("Filtered Nav Links Length:", filteredNavLinks.length);
+
+            topFunction(); // Call custom function
+        }
+    } else if (event.key === 'ArrowUp') {
+        event.preventDefault(); // Prevent default behavior
+
+        if (activeIndex !== -1 && activeIndex < filteredNavLinks.length - 1) { // If there is a next link in the filtered list
+            const nextIndex = activeIndex + 1; // Index of the next link
+
+            // Remove the active class from the current active link
+            filteredNavLinks[activeIndex].classList.remove("active");
+
+            // Add the active class to the next link
+            filteredNavLinks[nextIndex].classList.add("active");
+
+            // Get the target section from the next link
+            const target = filteredNavLinks[nextIndex].getAttribute("data-target");
+
+            // Remove active class from all sections
+            const sections = document.querySelectorAll(".section");
+            sections.forEach((section) => section.classList.remove("active"));
+
+            // Add active class to the target section
+            const targetSection = document.getElementById(target);
+            if (targetSection) {
+                targetSection.classList.add("active");
+                console.log("Showing section:", target); // Debugging
+            } else {
+                console.error("Target section not found:", target); // Debugging
+            }
+
+            console.log("Active Index:", activeIndex);
+            console.log("Filtered Nav Links Length:", filteredNavLinks.length);
+            console.log("Next Index:", nextIndex);
+
+            topFunction(); // Call custom function
+        }
+    }
+});
+
+
 //Sidebar
-let isSidebarOpen = false;
+const body = document.querySelector("body"),
+    sidebar = body.querySelector(".nav-sidebar"),
+    sidebarToggle = document.getElementById("sidebarToggle");
+
+sidebarToggle.addEventListener("click", () => {
+    sidebar.classList.toggle("close");
+    if (sidebar.dataset.state === "closed") {
+        sidebar.dataset.state = "opened";
+        sidebarToggle.style.color = '#02ff88';
+    } else {
+        sidebar.dataset.state = "closed";
+        sidebarToggle.style.color = '#B3B3B3';
+    }
+});
+
+/* let isSidebarOpen = false;
 
 function toggleNav() {
     const sidebar = document.getElementById("mySidebar");
@@ -138,6 +204,7 @@ function toggleNav() {
 
     isSidebarOpen = !isSidebarOpen;
 }
+    */
 
 let lastScrollY = window.scrollY;
 let timeout = null;
@@ -148,57 +215,97 @@ function resetHeader() {
     if (!isHovered) {
         const header = document.getElementById('header');
         const maincontent = document.getElementById('main-content');
+        const leftnav = document.getElementById('navcontainer');
         header.style.transform = 'translateY(-48px)';
         maincontent.style.paddingTop = '20px';
+        leftnav.style.paddingTop = '20px';
     }
 }
 
-// Function to handle the scroll event
-function handleScroll() {
-    const header = document.getElementById('header');
-    const maincontent = document.getElementById('main-content');
-
-    if (window.scrollY < lastScrollY) {
-        // Scrolling up
-        header.style.transform = 'translateY(0px)';
-        maincontent.style.paddingTop = '70px';
-    } else {
-        // Scrolling down
-        header.style.transform = 'translateY(-48px)';
-        maincontent.style.paddingTop = '20px';
-    }
-
-    lastScrollY = window.scrollY;
-
-    // Clear any previous timeout and set a new one
-    if (timeout) {
-        clearTimeout(timeout);
-    }
-
-    // Set a timeout to reset the header after 2 seconds of inactivity
-    timeout = setTimeout(resetHeader, 2000);
-}
-
-// Handle hover state
+// Pinned Navigation
 const headerElement = document.getElementById('header');
+document.querySelector('.nav-pin').addEventListener('click', function() {
+    const isPinned = headerElement.getAttribute('data-pinned'); // Check data-pinheaderElementned on the 
+    const navpin = document.getElementById("pin");
+    if (isPinned === 'true') {
+        headerElement.classList.remove('pinned');
+        headerElement.setAttribute('data-pinned', 'false'); // Set data-pinned to false
+        navpin.style.color = '#B3B3B3';
+    }
+    if (isPinned === 'false') {
+        headerElement.classList.add('pinned');
+        headerElement.setAttribute('data-pinned', 'true'); // Set data-pinned to true
+        navpin.style.color = '#02ff88';
+        navpin.style.animation = 'neon1 1.5s ease-in-out infinite alternate';
+        navpin.style.animationPlayState = 'running';
+    }
+});
+
 const maincontent = document.getElementById('main-content');
+const leftnav = document.getElementById('navcontainer');
 headerElement.addEventListener('mouseover', () => {
     isHovered = true;
     // Ensure the header is in the visible state when hovered
     headerElement.style.transform = 'translateY(0px)';
     maincontent.style.paddingTop = '70px';
+    leftnav.style.paddingTop = '70px';
 });
 
 headerElement.addEventListener('mouseout', () => {
-    isHovered = false;
-    maincontent.style.paddingTop = '20px';
-    // Reset to original state after hover
-    header.style.transform = 'translateY(-48px)'
-        // timeout = setTimeout(resetHeader, 2000);
+    const isPinned = headerElement.getAttribute('data-pinned'); // Check data-pinheaderElementned on the
+    if (isPinned === 'true') {
+        isHovered = true;
+        // Ensure the header is in the visible state when hovered
+        headerElement.style.transform = 'translateY(0px)';
+        maincontent.style.paddingTop = '70px';
+
+    }
+    if (isPinned === 'false') {
+        isHovered = false;
+        //maincontent.style.paddingTop = '20px';
+        //header.style.transform = 'translateY(-48px)'
+        // Reset to original state after hover
+        timeout = setTimeout(resetHeader, 2000);
+    }
 });
 
+// Function to handle the scroll event
+function handleScroll() {
+    const header = document.getElementById('header');
+    const maincontent = document.getElementById('main-content');
+    const isPinned = headerElement.getAttribute('data-pinned'); // Check data-pinheaderElementned on the
+    if (isPinned === 'false') {
+        isHovered = true;
+        // Ensure the header is in the visible state when hovered
+        headerElement.style.transform = 'translateY(0px)';
+        maincontent.style.paddingTop = '70px';
+    }
+    if (isPinned === 'false') {
+        isHovered = false;
+        if (window.scrollY < lastScrollY) {
+            // Scrolling up
+            header.style.transform = 'translateY(0px)';
+            maincontent.style.paddingTop = '70px';
+        } else {
+            // Scrolling down
+            header.style.transform = 'translateY(-48px)';
+            maincontent.style.paddingTop = '20px';
+        }
+
+        lastScrollY = window.scrollY;
+
+        // Clear any previous timeout and set a new one
+        if (timeout) {
+            clearTimeout(timeout);
+        }
+
+        // Set a timeout to reset the header after 2 seconds of inactivity
+        timeout = setTimeout(resetHeader, 2000);
+    }
+}
+
 // Check if the device width is less than or equal to 530px
-if (window.matchMedia('(max-width: 600px) and (orientation: portrait)').matches) {
+if (window.matchMedia('(max-width: 600px)').matches) {
     window.addEventListener('scroll', handleScroll);
 }
 

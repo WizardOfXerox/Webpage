@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTA-Gallery</title>
+    <hta:application 
+        id="myHTA" 
+        applicationname="HTA-Gallery" 
+        border="thick" 
+        innerborder="yes"
+        caption="yes" 
+        maximizebutton="yes" 
+        minimizebutton="yes" 
+        scroll="no" 
+        singleinstance="yes"
+        version="v1.3.5"
+        windowstate="normal">
+    <meta http-equiv="x-ua-compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xerox Artificial Intelligence (XAI)</title>
+    <!-- <link rel="stylesheet" href="./CSS/Reset.css" /> -->
+    <link rel="stylesheet" href="./CSS/Global.css" />
+    <link rel="stylesheet" href="./CSS/Stars.css" />
+    <link rel="stylesheet" href="./CSS/HeaderNavigation.css" />
+    <link rel="stylesheet" href="./CSS/LeftSideNavigation.css" />
+    <link rel="stylesheet" href="./CSS/ProjectNavigation.css" />
+    <link rel="stylesheet" href="./CSS/FooterNavigation.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./CSS/AdminSection.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <!-- <div class="Stars" id='stars'></div>
+    <div class="Stars" id='stars2'></div>
+    <div class="Stars" id='stars3'></div> -->
+    <div class="nav-header" id="header" data-pinned="false">
+        <div class="nav-content">
+            <div class="text-logo">
+                <a href="#">WOX</a>
+            </div>
+
+            <!-- Text Links (Default) -->
+            <div class="nav-links text-links">
+                <a class="nav-link active" data-target="projects"><i class="fas fa-briefcase" style="margin-right: 10px;"></i>Projects</a>
+                <a class="nav-pin" style="float: right;"><i class="fa-solid fa-thumbtack" id="pin"></i></a>
+                <a class="nav-link" data-target="admin" style="float: right;"><i class="fa-solid fa-user-tie" style="margin-right: 10px;"></i>Admin</a>
+            </div>
+
+            <!-- Icon Links (Responsive) -->
+            <div class="nav-links icon-links">
+                <a class="nav-link-icon active" data-target="projects"><i class="fas fa-briefcase"></i></a>>
+                <a class="nav-pin"><i class="fa-solid fa-thumbtack" id="pin"></i></a>
+                <a class="nav-link" data-target="admin" style="float: right;"><i class="fa-solid fa-user-tie" style="margin-right: 10px;"></i>Admin</a>
+            </div>
+        </div>
+        <!-- <div class="header-button"></div> -->
+    </div>
+    <!-- <div id="mySidebar" class="nav-sidebar close" data-state="closed">
+        <h2>XAI Projects</h2>
+        <a href="#project-1">AI Project 1</a>
+        <a href="#project-2">AI Project 2</a>
+        <a href="#project-3">AI Project 3</a>
+        <h2>Book Series</h2>
+        <a href="#book-1">Book 1</a>
+        <a href="#book-2">Book 2</a>
+        <a href="#book-3">Book 3</a>
+    </div> -->
+    <main class="main-content" id="main-content">
+        <div id="projects" style="padding-top: 30px;" class="section active">
+            <button id="sidebarToggle" class="openbtn">
+				Sidebar
+			</button>
+            <button id="AIToggle" class="creation-nav-link-btn active" data-target="ai">
+				Public
+			</button>
+            <button id="BookToggle" class="creation-nav-link-btn" data-target="books">
+				Private
+			</button>
+
+            <div id="ai" class="section-c1 active">
+                <h1 style="margin: 25px;">Public Gallery</h1>
+                <div id="ai-container" class="project ai-card-container">
+                    <div id="project-1" class="ai-card">
+                        <img src="./Images/DL-001-DEVI.png" alt="AI Project 1" />
+                        <div class="ai-card-content">
+                            <h2>DL-001 DEVI</h2>
+                            <p>The name "Devi" could be derived from "devil" or "devious," hinting at a mischievous or mysterious nature. The red accents and bright eyes give it a somewhat eerie but captivating look, fitting for a creature with a slightly
+                                enigmatic or playful character.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-2" class="ai-card">
+                        <img src="./Images/DL-002-CIRLET.png" alt="AI Project 2" />
+                        <div class="ai-card-content">
+                            <h2>DL-002 CIRCLET</h2>
+                            <p>The name "Cirlet" might come from "circle" or "circuit," possibly referencing the circular eye and body features of this creature. The name suggests a sense of completeness and perhaps a connection to technology or energy,
+                                aligning with its glowing and otherworldly appearance.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-3" class="ai-card">
+                        <img src="https://onlinetestcase.com/wp-content/uploads/2023/06/10.4-MB.png" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-003 HIDA</h2>
+                            <p>The name "Hida" could be a play on "hide" or "hidden," suggesting that this creature might have stealthy or elusive qualities. Its softer features and dark mask-like face give it an appearance of being both approachable and
+                                mysterious, possibly hinting at a dual nature of being both a guardian and a secret keeper.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="books" class="section-c1">
+                <h1>Book Series</h1>
+                <div id="book-container" class="book book-card-container">
+                    <div id="book-1" class="book-card">
+                        <img src="./Images/ph1.png" alt="Book 1" />
+                        <div class="book-card-content">
+                            <a href="#" class="book-title">
+                                <h2>Book 1</h2>
+                            </a>
+                            <div class="chapter-list">
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <!-- Add more chapters as needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="book-2" class="book-card">
+                        <img src="./Images/ph2.webp" alt="Book 2" />
+                        <div class="book-card-content">
+                            <a href="#" class="book-title">
+                                <h2>Book 2</h2>
+                            </a>
+                            <div class="chapter-list">
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <!-- Add more chapters as needed -->
+                            </div>
+                        </div>
+                    </div>
+                    <div id="book-3" class="book-card">
+                        <img src="./Images/mosaic_mosaic8.jpg" alt="Book 3" />
+                        <div class="book-card-content">
+                            <a href="#" class="book-title">
+                                <h2>Book 3</h2>
+                            </a>
+                            <div class="chapter-list">
+                                <a href="#" class="chapter-link">
+                                    <h3>Chapter 1</h3>
+                                </a>
+                                <p>Description of Chapter 1...</p>
+                                <!-- Add more chapters as needed -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div id="website" class="section-c1">
+                <h1>Websites</h1>
+                <div id="website-project-container" class="website website-card-container">
+                    <div id="project-1" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Cursor-Trail/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Cursor-Trail/index.html">
+                                <h2>Cursor-Trail Project</h2>
+                            </a>
+                            <p>Description of Website Project 1...</p>
+                        </div>
+                    </div>
+                    <div id="project-2" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/3d-Gallery/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/3d-Gallery/index.html">
+                                <h2>3d-Gallery Project</h2>
+                            </a>
+                            <p>Description of Website Project 2...</p>
+                        </div>
+                    </div>
+                    <div id="project-3" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Glassmorphism-Login-Form/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Glassmorphism-Login-Form/index.html">
+                                <h2>Glassmorphism Login-Form Project</h2>
+                            </a>
+                            <p>Description of Website Project 3...</p>
+                        </div>
+                    </div>
+                    <div id="project-4" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/9-Dots-Navigation-Menu/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/9-Dots-Navigation-Menu/index.html">
+                                <h2>9-Dots Navigation Menu Project</h2>
+                            </a>
+                            <p>Description of Website Project 4...</p>
+                        </div>
+                    </div>
+                    <div id="project-5" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Magic-Navigation-Menu/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Magic-Navigation-Menu/index.html">
+                                <h2>Magic Navigation Menu Project</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Glowing-Icon-Hover-Effects/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Glowing-Icon-Hover-Effects/index.html">
+                                <h2>Glowing Icon Hover Effects Project</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Letter-Matrix/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Letter-Matrix/index.html">
+                                <h2>Letter Matrix</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Ball-Colorful-Grid/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Ball-Colorful-Grid/index.html">
+                                <h2>Ball Colorful Grid</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/WebGL-Ball/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/WebGL-Ball/index.html">
+                                <h2>WebGL-Ball</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Text-Animation/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Text-Animation/index.html">
+                                <h2>Text Animation</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Cyber-Toast-Notifications/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/Cyber-Toast-Notifications/index.html">
+                                <h2>Cyber Toast Notifications</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="website-card">
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/The-Artifact/index.html" class="responsive-iframe"></iframe>
+                        </div>
+                        <div class="website-card-content">
+                            <a href="./Website/The-Artifact/index.html">
+                                <h2>The Artifact</h2>
+                            </a>
+                            <p>Description of Website Project 5...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="admin" class="section">
+            <div class="Passcode">
+                <div class="lock">
+                    <div class="screen">
+                        <div class="code">00000</div>
+                        <div class="status">LOCKED</div>
+                        <div class="scanlines"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <p><strong>Super Secret Code</strong>: 12345</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        <div class="footer-button"></div>
+        <div class="copyright-area">
+            <div class="copyright-container">
+                <div class="copyright-text">
+                    <p>Copyright &copy; 2024, All Right Reserved <a href="https://github.com">WOX</a></p>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a href="#" data-target="about">About</a>
+                <a href="#" data-target="resume">Resume</a>
+                <a href="#" data-target="projects">Projects</a>
+                <a href="#" data-target="blog">Blog</a>
+                <a href="#" data-target="contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- partial scripts -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js'></script>
+    <script src="./JS/jquery.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

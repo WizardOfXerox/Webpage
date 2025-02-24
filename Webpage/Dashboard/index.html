@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xerox Artificial Intelligence (XAI)</title>
+    <!-- <link rel="stylesheet" href="./CSS/Reset.css" /> -->
+    <link rel="stylesheet" href="./CSS/Global.css" />
+    <link rel="stylesheet" href="./CSS/Stars.css" />
+    <link rel="stylesheet" href="./CSS/HeaderNavigation.css" />
+    <link rel="stylesheet" href="./CSS/LeftSideNavigation.css" />
+    <link rel="stylesheet" href="./CSS/FooterNavigation.css" />
+    <link rel="stylesheet" href="./CSS/AboutSection.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./CSS/AdminSection.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
+</head>
+
+<body>
+    <div class="Stars" id='stars'></div>
+    <div class="Stars" id='stars2'></div>
+    <div class="Stars" id='stars3'></div>
+    <div class="nav-header" id="header" data-pinned="false">
+        <div class="nav-content">
+            <div class="text-logo">
+                <a id="sidebarToggle">WOX</a>
+            </div>
+
+            <!-- Text Links (Default) -->
+            <div class="nav-links text-links">
+                <a class="nav-link" data-target="Dashboard"><i class="fa-solid fa-gauge" style="margin-right: 10px;"></i>Dashboard</a>
+                <a class="nav-pin" style="float: right;"><i class="fa-solid fa-thumbtack" id="pin"></i></a>
+                <a class="nav-link" data-target="admin" style="float: right;"><i class="fa-solid fa-user-tie" style="margin-right: 10px;" id="pin"></i>Admin</a>
+                <a class="nav-link active" style="float: right;" data-target="about"><i class="fas fa-user" style="margin-right: 10px;"></i>About</a>
+            </div>
+
+            <!-- Icon Links (Responsive) -->
+            <div class="nav-links icon-links">
+                <a class="nav-link-icon active" data-target="about"><i class="fas fa-user"></i></a>
+                <a class="nav-pin" style="float: right;"><i class="fa-solid fa-thumbtack" id="pin"></i></a>
+                <a class="nav-link" data-target="admin" style="float: right;"><i class="fa-solid fa-user-tie" style="margin-right: 10px;" id="pin"></i>Admin</a>
+            </div>
+        </div>
+        <!-- <div class="header-button"></div> -->
+    </div>
+    <div id="mySidebar" class="nav-sidebar close" data-state="closed">
+        <div class="nav-container" id="navcontainer">
+            <h2>XAI Projects</h2>
+            <a href="#project-1">AI Project 1</a>
+            <a href="#project-2">AI Project 2</a>
+            <a href="#project-3">AI Project 3</a>
+            <h2>Book Series</h2>
+            <a href="#book-1">Book 1</a>
+            <a href="#book-2">Book 2</a>
+            <a href="#book-3">Book 3</a>
+        </div>
+    </div>
+    <main class="main-content" id="main-content">
+        <div id="about" class="section active">
+            <div class="about-frame">
+                <div class="about-container">
+                    <div class="profile-card animate__animated animate__pulse">
+                        <img src="./Images/mosaic_mosaic8.jpg" alt="Richard Hanrick" class="profile-pic">
+                        <h2>Wiz Xerox</h2>
+                        <p>Web Developer</p>
+                        <div class="contact-details">
+                            <div class="contact-item animate__animated animate__pulse animate__delay-1s">
+                                <ion-icon name="mail-outline"></ion-icon>
+                                <span>wizardofxerox@gmail.com</span>
+                            </div>
+                            <div class="contact-item animate__animated animate__pulse animate__delay-2s">
+                                <ion-icon name="call-outline"></ion-icon>
+                                <span>+63 (942) 459-0845</span>
+                            </div>
+                            <div class="contact-item animate__animated animate__pulse animate__delay-3s">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <span>January 17, 2006</span>
+                            </div>
+                            <div class="contact-item animate__animated animate__pulse animate__delay-4s">
+                                <ion-icon name="location-outline"></ion-icon>
+                                <span>Dasmariñas, Cavite, Philippines</span>
+                            </div>
+                            <div class="profile-social animate__animated animate__pulse animate__delay-5s">
+                                <div class="profile-social-content">
+                                    <a alt="Discord" aria-label="Discord" href="https://discord.com">
+                                        <ion-icon name="logo-discord" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Facebook" aria-label="Facebook" href="https://facebook.com">
+                                        <ion-icon name="logo-facebook" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Youtube" aria-label="Youtube" href="https://youtube.com">
+                                        <ion-icon name="logo-youtube" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Github" aria-label="Github" href="https://github.com">
+                                        <ion-icon name="logo-github" aria-hidden="false"></ion-icon>
+                                    </a>
+                                    <a alt="Codepen" aria-label="Codepen" href="https://codepen.io">
+                                        <ion-icon name="logo-codepen" aria-hidden="false"></ion-icon>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <h2>About Me</h2>
+                        <p>Theres nothing about me thats special</p>
+                    </div>
+                    <div class="prog-card animate__animated animate__pulse">
+                        <ion-icon name="code-slash-outline" style="font-size: 70px; color: #02ff88;"></ion-icon>
+                        <h2 style="margin-bottom: 0;">Programming</h2>
+                        <p style="margin: 0;">Languages</p>
+                        <div class="contact-details">
+                            <div class="prog-language">
+                                <div class="contact-icons">
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-2s">
+                                        <i class="fa-brands fa-html5"></i>
+                                        <span>HTML5</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-2s">
+                                        <i class="fa-brands fa-css3-alt"></i>
+                                        <span>CSS3</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-3s">
+                                        <i class="fa-brands fa-js"></i>
+                                        <span>JAVASCRIPT</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-4s">
+                                        <i class="fa-brands fa-java"></i>
+                                        <span>JAVA</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-4s">
+                                        <i class="fa-brands fa-python"></i>
+                                        <span>PYTHON</span>
+                                    </div>
+                                    <div class="contact-items animate__animated animate__pulse animate__delay-4s">
+                                        <i class="fa-solid fa-database"></i>
+                                        <span>MYSQL</span>
+                                    </div>
+                                </div>
+                                <div class="contact-progress-bar">
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar1">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">50%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar2">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">60%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar3">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">70%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar4">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">80%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar5">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">90%</p>
+                                        </div>
+                                    </div>
+                                    <div class="progress">
+                                        <div class="progress-value progress-bar6">
+                                            <p style="margin: 0; font-weight: bold; font-size: 10px; color: #2f2e2f;">100%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="services-section">
+                        <h2>What I'm Doing</h2>
+                        <div class="services-contents">
+                            <div class="service-card">
+                                <ion-icon name="brush-outline"></ion-icon>
+                                <h3>Web Design</h3>
+                                <p>The most modern and high-quality design made at a professional level.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="code-slash-outline"></ion-icon>
+                                <h3>Web Development</h3>
+                                <p>High-quality development of sites at the professional level.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="phone-portrait-outline"></ion-icon>
+                                <h3>Mobile Apps</h3>
+                                <p>Professional development of applications for iOS and Android.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="desktop-outline"></ion-icon>
+                                <h3>Computer Technician</h3>
+                                <p>Good at troubleshooting computer problems.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="game-controller"></ion-icon>
+                                <h3>Game Developer</h3>
+                                <p>High-quality game making skills at a professional level.</p>
+                            </div>
+                            <div class="service-card">
+                                <ion-icon name="camera-outline"></ion-icon>
+                                <h3>Photography</h3>
+                                <p>I make high-quality photos of any category at a professional level.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonials-section">
+                        <div class="testimonials-content">
+                            <h2>Customer Ratings</h2>
+                            <div class="testimonial-card">
+                                <img src="./Images/mosaic_mosaic8.jpg" alt="AssassinOfXerox (AOX)" class="testimonial-pic">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-text-name">
+                                        <h3>AssassinOfXerox (AOX)</h3>
+                                        <div class="testimonial-text-stars">
+                                            <a alt="Ratings" aria-label="1-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="2-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="3-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="4-Star">
+                                                <ion-icon name="star-half" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="5-Star">
+                                                <ion-icon name="star-outline" aria-hidden="false"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p>Nothing yet...</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-card">
+                                <img src="./Images/mosaic_mosaic8.jpg" alt="PaladinOfXerox (POX)" class="testimonial-pic">
+                                <div class="testimonial-text">
+                                    <div class="testimonial-text-name">
+                                        <h3>PaladinOfXerox (POX)</h3>
+                                        <div class="testimonial-text-stars">
+                                            <a alt="Ratings" aria-label="1-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="2-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="3-Star">
+                                                <ion-icon name="star" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="4-Star">
+                                                <ion-icon name="star-half" aria-hidden="false"></ion-icon>
+                                            </a>
+                                            <a alt="Ratings" aria-label="5-Star">
+                                                <ion-icon name="star-outline" aria-hidden="false"></ion-icon>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <p>Nothing yet...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clients-section">
+                        <h2>Clients</h2>
+                        <div class="clients-contents">
+                            <div class="clients-card">
+                                <img src="Images/DL-001-DEVI.png" alt="Client 1">
+                                <p>Client 1</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="./Images/DL-002-CIRLET.png" alt="Client 2">
+                                <p>Client 2</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="./Images/DL-003-HIDA.png" alt="Client 3">
+                                <p>Client 3</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="./Images/mosaic_mosaic8.jpg" alt="Client 4">
+                                <p>Client 4</p>
+                            </div>
+                            <div class="clients-card">
+                                <img src="./Images/ph1.png" alt="Client 5">
+                                <p>Client 5</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="admin" class="section">
+            <div class="Passcode">
+                <div class="lock">
+                    <div class="screen">
+                        <div class="code">00000</div>
+                        <div class="status">LOCKED</div>
+                        <div class="scanlines"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <p><strong>Super Secret Code</strong>: 12345</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="footer">
+        <div class="footer-button"></div>
+        <div class="copyright-area">
+            <div class="copyright-container">
+                <div class="copyright-text">
+                    <p>Copyright &copy; 2024, All Right Reserved <a href="https://github.com">WOX</a></p>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a href="#" data-target="about">About</a>
+                <a href="#" data-target="resume">Resume</a>
+                <a href="#" data-target="projects">Projects</a>
+                <a href="#" data-target="blog">Blog</a>
+                <a href="#" data-target="contact">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- partial scripts -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js'></script>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/flickity.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

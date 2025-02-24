@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Xerox Artificial Intelligence (XAI)</title>
+    <!-- <link rel="stylesheet" href="./CSS/Reset.css" /> -->
     <link rel="stylesheet" href="./CSS/Global.css" />
     <link rel="stylesheet" href="./CSS/Stars.css" />
     <link rel="stylesheet" href="./CSS/HeaderNavigation.css" />
@@ -16,39 +17,53 @@
     <link rel="stylesheet" href="./CSS/ResumeSection.css" />
     <link rel="stylesheet" href="./CSS/ContactSection.css" />
     <link rel="stylesheet" href="./CSS/CalculatorSection.css" />
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <link rel="stylesheet" href="./CSS/AdminSection.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
 </head>
 
 <body>
     <div class="Stars" id='stars'></div>
     <div class="Stars" id='stars2'></div>
     <div class="Stars" id='stars3'></div>
-    <div class="nav-header" id="header">
+    <div class="nav-header" id="header" data-pinned="false">
         <div class="nav-content">
+            <div class="text-logo">
+                <a href="#">WOX</a>
+            </div>
+
             <!-- Text Links (Default) -->
             <div class="nav-links text-links">
                 <a class="nav-link active" data-target="about"><i class="fas fa-user" style="margin-right: 10px;"></i>About</a>
                 <a class="nav-link" data-target="resume"><i class="fas fa-file-alt" style="margin-right: 10px;"></i>Resume</a>
-                <a href="#" class="nav-link" data-target="projects"><i class="fas fa-briefcase" style="margin-right: 10px;"></i>Projects</a>
-                <a href="#" class="nav-link" data-target="blog"><i class="fas fa-blog" style="margin-right: 10px;"></i>Blog</a>
-                <a href="#" class="nav-link" data-target="contact"><i class="fas fa-envelope" style="margin-right: 10px;"></i>Contact</a>
-                <a href="#" class="nav-link" data-target="calculator"><i class="fas fa-calculator" style="margin-right: 10px;"></i>Calculator</a>
+                <a class="nav-link" data-target="projects"><i class="fas fa-briefcase" style="margin-right: 10px;"></i>Projects</a>
+                <a class="nav-link" data-target="blog"><i class="fas fa-blog" style="margin-right: 10px;"></i>Blog</a>
+                <a class="nav-link" data-target="contact"><i class="fas fa-envelope" style="margin-right: 10px;"></i>Contact</a>
+                <!-- <a class="nav-link" data-target="calculator"><i class="fas fa-calculator" style="margin-right: 10px;"></i>Calculator</a> -->
+                <a class="nav-pin" style="float: right;"><i class="fa-solid fa-thumbtack" id="pin"></i></a>
+                <a class="nav-link" data-target="admin" style="float: right;"><i class="fa-solid fa-user-tie" style="margin-right: 10px;" id="pin"></i>Admin</a>
             </div>
 
             <!-- Icon Links (Responsive) -->
             <div class="nav-links icon-links">
-                <a class="nav-link active" data-target="about"><i class="fas fa-user"></i></a>
-                <a class="nav-link" data-target="resume"><i class="fas fa-file-alt"></i></a>
-                <a href="#" class="nav-link" data-target="projects"><i class="fas fa-briefcase"></i></a>
-                <a href="#" class="nav-link" data-target="blog"><i class="fas fa-blog"></i></a>
-                <a href="#" class="nav-link" data-target="contact"><i class="fas fa-envelope"></i></a>
+                <a class="nav-link-icon active" data-target="about"><i class="fas fa-user"></i></a>
+                <a class="nav-link-icon" data-target="resume"><i class="fas fa-file-alt"></i></a>
+                <a class="nav-link-icon" data-target="projects"><i class="fas fa-briefcase"></i></a>
+                <a class="nav-link-icon" data-target="blog"><i class="fas fa-blog"></i></a>
+                <a class="nav-link-icon" data-target="contact"><i class="fas fa-envelope"></i></a>
                 <!-- <a href="#" class="nav-link" data-target="calculator"><i class="fas fa-calculator"></i></a> -->
+                <a class="nav-pin"><i class="fa-solid fa-thumbtack" id="pin"></i></a>
             </div>
         </div>
-        <div class="header-button"></div>
+        <!-- <div class="header-button"></div> -->
     </div>
-    <div id="mySidebar" class="nav-sidebar">
+    <div id="mySidebar" class="nav-sidebar close" data-state="closed">
         <h2>XAI Projects</h2>
         <a href="#project-1">AI Project 1</a>
         <a href="#project-2">AI Project 2</a>
@@ -58,7 +73,7 @@
         <a href="#book-2">Book 2</a>
         <a href="#book-3">Book 3</a>
     </div>
-    <div class="main-content" id="main-content">
+    <main class="main-content" id="main-content">
         <div id="about" class="section active">
             <div class="about-frame">
                 <div class="about-container">
@@ -271,7 +286,7 @@
                         <h2>Clients</h2>
                         <div class="clients-contents">
                             <div class="clients-card">
-                                <img src="Images/DL-001-DEVI.png" alt="Client 1">
+                                <img src="./Images/DL-001-DEVI.png" alt="Client 1">
                                 <p>Client 1</p>
                             </div>
                             <div class="clients-card">
@@ -370,7 +385,7 @@
         </div>
 
         <div id="projects" class="section">
-            <button id="sidebarToggle" class="openbtn" onclick="toggleNav()">
+            <button id="sidebarToggle" class="openbtn">
 				☰ Open Sidebar
 			</button>
             <button id="AIToggle" class="creation-nav-link-btn active" data-target="ai">
@@ -384,30 +399,106 @@
 			</button>
 
             <div id="ai" class="section-c1 active">
-                <h1>Artificial Intelligence</h1>
+                <h1>Artificial Intelligence: DarkLight Series</h1>
                 <div id="ai-container" class="project ai-card-container">
                     <div id="project-1" class="ai-card">
                         <img src="./Images/DL-001-DEVI.png" alt="AI Project 1" />
                         <div class="ai-card-content">
-                            <h2>AI Project 1</h2>
-                            <p>Description of AI Project 1...</p>
+                            <h2>DL-001 DEVI</h2>
+                            <p>The name "Devi" could be derived from "devil" or "devious," hinting at a mischievous or mysterious nature. The red accents and bright eyes give it a somewhat eerie but captivating look, fitting for a creature with a slightly
+                                enigmatic or playful character.
+                            </p>
                         </div>
                     </div>
                     <div id="project-2" class="ai-card">
                         <img src="./Images/DL-002-CIRLET.png" alt="AI Project 2" />
                         <div class="ai-card-content">
-                            <h2>AI Project 2</h2>
-                            <p>Description of AI Project 2...</p>
+                            <h2>DL-002 CIRCLET</h2>
+                            <p>The name "Cirlet" might come from "circle" or "circuit," possibly referencing the circular eye and body features of this creature. The name suggests a sense of completeness and perhaps a connection to technology or energy,
+                                aligning with its glowing and otherworldly appearance.
+                            </p>
                         </div>
                     </div>
                     <div id="project-3" class="ai-card">
                         <img src="./Images/DL-003-HIDA.png" alt="AI Project 3" />
                         <div class="ai-card-content">
-                            <h2>AI Project 3</h2>
-                            <p>Description of AI Project 3...</p>
+                            <h2>DL-003 HIDA</h2>
+                            <p>The name "Hida" could be a play on "hide" or "hidden," suggesting that this creature might have stealthy or elusive qualities. Its softer features and dark mask-like face give it an appearance of being both approachable and
+                                mysterious, possibly hinting at a dual nature of being both a guardian and a secret keeper.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-4" class="ai-card">
+                        <img src="./Images/DL-004-LUXIN.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-004 LUXIN</h2>
+                            <p>The name "Luxin" is derived from the Latin word "lux," meaning "light." This name emphasizes the creature's glowing and ethereal nature. It suggests that Luxin embodies the essence of light, perhaps acting as a beacon or guide
+                                within the darkness. The name implies purity, clarity, and an illuminating presence that stands out in the dark.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-5" class="ai-card">
+                        <img src="./Images/DL-005-GLOVINE.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-005 GLOVINE</h2>
+                            <p>The name "Glovine" combines "glow" and "vine," reflecting its glowing, leafy ears and nature-inspired appearance. This name suggests a connection to nature and light, as if Glovine is a creature that thrives in the balance
+                                between the natural world and mystical energy. The glowing leaves hint at a creature that may possess healing or nurturing qualities, illuminating and bringing life to its surroundings.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-6" class="ai-card">
+                        <img src="./Images/DL-006-AURELIS.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-006 AURELIS</h2>
+                            <p>The name "Aurelis" is inspired by "aurelia," which means "golden." This name reflects the creature's regal, luminous presence and its gold accents. Aurelis may represent wisdom, enlightenment, and an ancient, mystical essence.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-7" class="ai-card">
+                        <img src="./Images/DL-007-EMERIX.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-007 EMERIX</h2>
+                            <p>The name "Emerix" is Inspired by "emerald," highlights the creature's glowing green eyes and silver-emerald accents. The name suggests a valuable, mystical quality, and hints at a creature that embodies both playfulness and
+                                protection, with a connection to nature.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-5" class="ai-card">
+                        <img src="./Images/DL-008-SERALIS.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-008 SERALIS</h2>
+                            <p>The name "Seralis" is derived from "serene" and "aura," reflecting the creature's calm and peaceful nature. With its soft blue eyes and gentle glow, Seralis suggests tranquility and wisdom, perhaps acting as a soothing presence
+                                in the dark.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-5" class="ai-card">
+                        <img src="./Images/DL-009-NYXARA.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-009 NYXARA</h2>
+                            <p>The name "Nyxara" is from Combining "Nyx," the Greek goddess of the night, with "aura,". It embodies the essence of mystery and the ethereal. With its glowing purple eyes and iridescent features, Nyxara represents the enchanting
+                                and enigmatic aspects of the night, balancing curiosity with a sense of playfulness.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-5" class="ai-card">
+                        <img src="./Images/DL-010-LYXOR.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-010 LYXOR</h2>
+                            <p>The name "Lyxor" is inspired by "lux," meaning light, and "sor," suggesting a mystical or ancient connection. This name reflects the creature's glowing golden eyes and its wise, noble presence.
+                            </p>
+                        </div>
+                    </div>
+                    <div id="project-5" class="ai-card">
+                        <img src="./Images/DL-011-NOXEN.webp" alt="AI Project 3" />
+                        <div class="ai-card-content">
+                            <h2>DL-011 NOXEN</h2>
+                            <p>The name "Noxen" is inspired by "nox," the Latin word for night, reflecting its deep midnight blue fur and role as a guardian of the night sky. The name also hints at its mysterious and captivating presence.
+                            </p>
                         </div>
                     </div>
                 </div>
+                <h1>Artificial Intelligence: Humanoid Series</h1>
             </div>
 
             <div id="books" class="section-c1">
@@ -420,14 +511,6 @@
                                 <h2>Book 1</h2>
                             </a>
                             <div class="chapter-list">
-                                <a href="#" class="chapter-link">
-                                    <h3>Chapter 1</h3>
-                                </a>
-                                <p>Description of Chapter 1...</p>
-                                <a href="#" class="chapter-link">
-                                    <h3>Chapter 1</h3>
-                                </a>
-                                <p>Description of Chapter 1...</p>
                                 <a href="#" class="chapter-link">
                                     <h3>Chapter 1</h3>
                                 </a>
@@ -485,8 +568,8 @@
                 <h1>Websites</h1>
                 <div id="website-project-container" class="website website-card-container">
                     <div id="project-1" class="website-card">
-                        <div class="container">
-                            <iframe src="./Website/Cursor-Trail/index.html" class="responsive-iframe" loading="lazy"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Cursor-Trail/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Cursor-Trail/index.html">
@@ -496,8 +579,8 @@
                         </div>
                     </div>
                     <div id="project-2" class="website-card">
-                        <div class="container">
-                            <iframe src="./Website/3d-Gallery/index.html" class="responsive-iframe" loading="lazy"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/3d-Gallery/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/3d-Gallery/index.html">
@@ -507,8 +590,8 @@
                         </div>
                     </div>
                     <div id="project-3" class="website-card">
-                        <div class="container">
-                            <iframe src="./Website/Glassmorphism-Login-Form/index.html" class="responsive-iframe" loading="lazy"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Glassmorphism-Login-Form/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Glassmorphism-Login-Form/index.html">
@@ -518,8 +601,8 @@
                         </div>
                     </div>
                     <div id="project-4" class="website-card">
-                        <div class="container">
-                            <iframe src="./Website/9-Dots-Navigation-Menu/index.html" class="responsive-iframe" loading="lazy"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/9-Dots-Navigation-Menu/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/9-Dots-Navigation-Menu/index.html">
@@ -529,8 +612,8 @@
                         </div>
                     </div>
                     <div id="project-5" class="website-card">
-                        <div class="container">
-                            <iframe src="./Website/Magic-Navigation-Menu/index.html" class="responsive-iframe" loading="lazy"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Magic-Navigation-Menu/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Magic-Navigation-Menu/index.html">
@@ -540,8 +623,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe src="./Website/Glowing-Icon-Hover-Effects/index.html" class="responsive-iframe" loading="lazy"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Glowing-Icon-Hover-Effects/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Glowing-Icon-Hover-Effects/index.html">
@@ -551,9 +634,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe sandbox="allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts" frameborder="0" loading="lazy" scrolling="no" src="./Website/Letter-Matrix/index.html" class="responsive-iframe"
-                                tabindex="-1" title="Letter Matrix"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Letter-Matrix/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Letter-Matrix/index.html">
@@ -563,9 +645,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe sandbox="allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts" frameborder="0" loading="lazy" scrolling="no" src="./Website/Ball-Colorful-Grid/index.html" class="responsive-iframe"
-                                tabindex="-1" title="Ball Colorful Grid"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Ball-Colorful-Grid/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Ball-Colorful-Grid/index.html">
@@ -575,9 +656,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe sandbox="allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts" frameborder="0" loading="lazy" scrolling="no" src="./Website/WebGL-Ball/index.html" class="responsive-iframe"
-                                tabindex="-1" title="WebGL-Ball"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/WebGL-Ball/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/WebGL-Ball/index.html">
@@ -587,9 +667,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe sandbox="allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts" frameborder="0" loading="lazy" scrolling="no" src="./Website/Text-Animation/index.html" class="responsive-iframe"
-                                tabindex="-1" title="Text Animation"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Text-Animation/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Text-Animation/index.html">
@@ -599,9 +678,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe sandbox="allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts" frameborder="0" loading="lazy" scrolling="no" src="./Website/Cyber-Toast-Notifications/index.html" class="responsive-iframe"
-                                tabindex="-1" title="Cyber Toast Notifications"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/Cyber-Toast-Notifications/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/Cyber-Toast-Notifications/index.html">
@@ -611,9 +689,8 @@
                         </div>
                     </div>
                     <div id="project-6" class="website-card">
-                        <div class="container">
-                            <iframe sandbox="allow-forms allow-modals allow-pointer-lock allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts" frameborder="0" loading="lazy" scrolling="no" src="./Website/The-Artifact/index.html" class="responsive-iframe"
-                                tabindex="-1" title="The Artifact"></iframe>
+                        <div class="iframe-container">
+                            <iframe loading="lazy" src="./Website/The-Artifact/index.html" class="responsive-iframe"></iframe>
                         </div>
                         <div class="website-card-content">
                             <a href="./Website/The-Artifact/index.html">
@@ -633,7 +710,8 @@
                     <img src="./Images/ph1.png" alt="Design Conferences In 2022" />
                     <div class="blog-card-content">
                         <h3>Design Conferences In 2022</h3>
-                        <p>Test</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -752,7 +830,184 @@
                 <p id="result"></p>
             </div>
         </div>
-    </div>
+
+        <div id="admin" class="section">
+            <div class="Passcode">
+                <div class="lock">
+                    <div class="screen">
+                        <div class="code">00000</div>
+                        <div class="status">LOCKED</div>
+                        <div class="scanlines"></div>
+                    </div>
+                    <div class="rows">
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="cell">
+                                <div class="text">0</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">1</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">2</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">3</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">4</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">5</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">6</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">7</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">8</div>
+                            </div>
+                            <div class="cell">
+                                <div class="text">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info">
+                    <p><strong>Super Secret Code</strong>: 12345</p>
+                </div>
+            </div>
+        </div>
+    </main>
     <div class="footer">
         <div class="footer-button"></div>
         <div class="copyright-area">
@@ -770,10 +1025,14 @@
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <!-- partial scripts -->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.7/howler.js'></script>
+    <script src="./JS/script.js"></script>
+    <script src="./JS/flickity.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
 </body>
 
 </html>

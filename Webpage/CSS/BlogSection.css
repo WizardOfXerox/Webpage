@@ -3,23 +3,42 @@
 .blog-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    gap: 5px;
 }
 
 .blog-card {
     background-color: #2f2e2f;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    flex: 1 1 calc(25% - 20px);
-    max-width: calc(25% - 20px);
-    color: #B3B3B3;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s;
+    width: 300px;
+    max-height: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    scroll-snap-align: center;
+    transition: transform 0.3s, flex-basis 0.3s;
+    animation: slideDown 0.5s ease;
+    margin: 8px 8px;
+    -webkit-transition: transform 0.3s, flex-basis 0.3s;
+    -moz-transition: transform 0.3s, flex-basis 0.3s;
+    -ms-transition: transform 0.3s, flex-basis 0.3s;
+    -o-transition: transform 0.3s, flex-basis 0.3s;
+    -webkit-animation: slideDown 0.5s ease;
+}
+
+.blog-card {
+    flex: 1 1 calc(20% - 20px);
 }
 
 .blog-card:hover {
     transform: scale(1.05);
+}
+
+@media screen and (max-width: 884px) {
+    .blog-card {
+        flex: 1 1 calc(100% - 20px);
+    }
 }
 
 .blog-card img {
@@ -36,6 +55,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: calc(100% - 20px);
 }
 
 .blog-card-content h3 {
@@ -48,6 +68,14 @@
     margin: 5px 0 0;
     font-size: 0.9em;
     color: #B3B3B3;
+    display: inline;
+    -webkit-line-clamp: 5;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    /* Important for long words! */
 }
 
 .blog-card-content a {

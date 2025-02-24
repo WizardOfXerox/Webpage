@@ -1,0 +1,440 @@
+<!-- Start Of List
+Types:
+Anime
+Movie
+Especial
+Ova
+Ona
+New
+Manga
+Watch-List
+Type
+
+Adding a Item
+<!--  TYPE  -- >
+  <div class="column A TV + W-L"> <-- ANIME, MOVIE, ESPECIAL, OV4, ON4, NEW, MANGA, W-L, TY
+    <div class="content">
+      <a href="">
+      <figure><img src="Type Image" alt="Type"/><small>僕のヒーローアカデミア</small></figure> <-- Here the image url
+      <h4>Boku no hero academia</h4> <-- Here the name of the item
+        
+      </a>
+      <span class="type"><small id="anime">Type</small></span> <-- Here
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span> <-- Remove if its not watchlist
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span> <-- Here the copy when clicked
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span> <-- Here The "Year to Year"
+    </div>
+  </div>
+
+     End of List-->
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>﴾۞﴿My List﴾۞﴿</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" type="img/png" href="./icon.png">
+  <link rel="loading icon" type="img/png" href="./icon.png">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="List">
+  <!-- Titulo -->
+
+<div class="title" style="background-image: url('https://i.gifer.com/7SIm.gif');">
+	<div class="logo user">
+		<p>WizardOfXerox</p>
+	</div>
+      <div style="color:#fff;background:rgba(0,0,0,.7);padding:100px 10px 50px 10px;">
+        <h1>﴾۞﴿List﴾۞﴿</h1>
+        <!---- BUSCADOR ---->
+        <center><input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search..." title="Find Anime..."></center>
+      </div>
+</div> 
+
+<!-- ETIQUETAS -->
+<div class="contenedor">
+<div id="myBtnContainer">
+<div class="ABC">
+  <button class="btn" onclick="filterSelection('#')"> #</button>
+  <button class="btn" onclick="filterSelection('A')"> A</button>
+  <button class="btn" onclick="filterSelection('B')"> B</button>
+  <button class="btn" onclick="filterSelection('C')"> C</button>
+  <button class="btn" onclick="filterSelection('D')"> D</button>
+  <button class="btn" onclick="filterSelection('E')"> E</button>
+  <button class="btn" onclick="filterSelection('F')"> F</button>
+  <button class="btn" onclick="filterSelection('G')"> G</button>
+  <button class="btn" onclick="filterSelection('H')"> H</button>
+  <button class="btn" onclick="filterSelection('I')"> I</button>
+  <button class="btn" onclick="filterSelection('J')"> J</button>
+  <button class="btn" onclick="filterSelection('K')"> K</button>
+  <button class="btn" onclick="filterSelection('L')"> L</button>
+  <button class="btn" onclick="filterSelection('M')"> M</button>
+  <button class="btn" onclick="filterSelection('N')"> N</button>
+  <button class="btn" onclick="filterSelection('O')"> O</button>
+  <button class="btn" onclick="filterSelection('P')"> P</button>
+  <button class="btn" onclick="filterSelection('Q')"> Q</button>
+  <button class="btn" onclick="filterSelection('R')"> R</button>
+  <button class="btn" onclick="filterSelection('S')"> S</button>
+  <button class="btn" onclick="filterSelection('T')"> T</button>
+  <button class="btn" onclick="filterSelection('U')"> U</button>
+  <button class="btn" onclick="filterSelection('V')"> V</button>
+  <button class="btn" onclick="filterSelection('W')"> W</button>
+  <button class="btn" onclick="filterSelection('X')"> X</button>
+  <button class="btn" onclick="filterSelection('Y')"> Y</button>
+  <button class="btn" onclick="filterSelection('Z')"> Z</button>
+</div>
+<div class="TYPE">
+  <button class="btn active" onclick="filterSelection('all')"> ﴾All﴿</button>
+  <button class="btn" onclick="filterSelection('NEW')"> ﴾New﴿</button>
+  <button class="btn" onclick="filterSelection('W-L')"> ﴾Watch-List﴿</button>
+  <button class="btn" onclick="filterSelection('TV')"> ﴾TV﴿</button>
+  <button class="btn" onclick="filterSelection('MOVIE')"> ﴾Movie﴿</button>
+  <button class="btn" onclick="filterSelection('0V4')"> ﴾OVA﴿</button>
+  <button class="btn" onclick="filterSelection('0N4')"> ﴾ONA﴿</button>
+  <button class="btn" onclick="filterSelection('SPECIAL')"> ﴾Special﴿</button>
+</div>
+</div>
+
+<!-- Type List -->
+<div class="row" id="myMenu">
+  <!--  ANIME  -->
+  <div class="column A TV + W-L">
+    <div class="content">
+      <a href="">
+      <figure><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="Anime"/><small>僕のヒーローアカデミア</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="tv">TV</small></span>
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span>
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span>
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+  <!--  MOVIE  -->
+  <div class="column B MOVIE + W-L">
+    <div class="content">
+      <a href="">
+       <figure><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="Movie"/><small>進撃の巨人</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="movie">Movie</small></span>
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span>
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span>
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+    <!--  SPECIAL  -->
+  <div class="column A SPECIAL + W-L">
+    <div class="content">
+      <a href="">
+      <figure><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="Special"/><small>僕のヒーローアカデミア</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="special">Especial</small></span>
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span>
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span>
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+  <!--  OVA  -->
+  <div class="column B 0V4 + W-L">
+    <div class="content">
+      <a href="">
+       <figure><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="OVA"/><small>進撃の巨人</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="ova">OVA</small></span>
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span>
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span>
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+    <!--  ONA  -->
+  <div class="column A 0N4 + W-L">
+    <div class="content">
+      <a href="">
+      <figure><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="ONA"/><small>僕のヒーローアカデミア</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="ona">ONA</small></span>
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span>
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span>
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+  <!--  NEW  -->
+  <div class="column A NEW + W-L">
+    <div class="content">
+      <a href="">
+       <figure><img src="https://cdn.myanimelist.net/images/anime/10/78745.jpg" alt="New"/><small>進撃の巨人</small></figure>
+      <h4>Boku no hero academia</h4>
+        
+      </a>
+      <span class="type"><small id="new">New</small></span>
+	  <span class="watch-list"><small id="w-l">Watch-List</small></span>
+	  <span onclick="copyToClipboard(text)" class="copyname + limit" id="copy"><small><a onclick="copyToClipboard(text)" >Boku no hero academia</a></small></span>
+	  <script>
+		function copyToClipboard(text) {
+		if (window.clipboardData && window.clipboardData.setData) {
+			// IE specific code path to prevent textarea being shown while dialog is visible.
+			return clipboardData.setData("Text", text); 
+	
+		} else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+			var textarea = document.createElement("textarea");
+			textarea.textContent = text;
+			textarea.style.position = "fixed";  // Prevent scrolling to bottom of page in MS Edge.
+			document.body.appendChild(textarea);
+			textarea.select();
+			try {
+			
+				return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+			
+			} catch (ex) {
+				console.warn("Copy to clipboard failed.", ex);
+				return false;
+			} finally {
+			document.getElementById("alert").innerHTML = '<div class="alert alert-success ">' +
+				'<strong>Thanks!</strong> for successfully copy your Promo Code.</div>';
+				setTimeout(function(){ document.getElementById("alert").innerHTML = ' ' }, 3000);
+				document.body.removeChild(textarea);
+			}
+		}
+	}
+</script>
+      <span class="year"><small>year</small></span>
+    </div>
+  </div>
+</div>
+</div>
+  
+  
+
+</div>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js" integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP" crossorigin="anonymous"></script> 
+<link href='https://rawcdn.githack.com/ZeruBlogs/anime_page/0669789160d6be44a03300457c65ea0ae68f9bad/tooltip.css' rel='stylesheet'/><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p&amp;subset=japanese" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Didact+Gothic|Nunito:300,400,600,700,800|Quicksand:400,500,700' rel='stylesheet'/>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

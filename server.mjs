@@ -24,7 +24,8 @@ app.use(morgan('dev')); // Logging
 app.use(compression()); // Compression
 app.use(cors()); // Allow all origins
 app.use(helmet()); // Security
-app.use(express.static(path.join(path.resolve(), 'Webpage'))); // Serve static files from Webpage folder
+// app.use(express.static(path.join(path.resolve(), 'Webpage'))); // Serve static files from Webpage folder
+app.use(express.static(path.join('index.html'))); // Serve static files from Webpage folder
 
 // Dynamically Check Statuses
 const checkPackageStatus = () => {
@@ -193,4 +194,25 @@ app.listen(port, () => {
             console.error(err);
         }
     }
+});
+
+// Handle when a user goes inactive
+app.post("/user-inactive", (req, res) => {
+    const userIP = req.ip; // Use IP as a simple identifier (you can use session/cookie instead)
+    activeUsers.delete(userIP);
+    console.log(`User ${userIP} went inactive.`);
+    res.sendStatus(200);
+});
+
+// Handle when a user becomes active
+app.post("/user-active", (req, res) => {
+    const userIP = req.ip;
+    activeUsers.add(userIP);
+    console.log(`User ${userIP} is active.`);
+    res.sendStatus(200);
+});
+
+// Endpoint to check active users
+app.get("/active-users", (req, res) => {
+    res.json({ activeUsers: Array.from(activeUsers) });
 });

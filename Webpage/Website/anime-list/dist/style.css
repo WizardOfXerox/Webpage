@@ -1,0 +1,432 @@
+body, html {
+height: 100%;
+  margin: 0;
+  margin:0;
+  font-family: 'Nunito', sans-serif;
+  	background-color:#4e4e4e;
+  background-image: url('#');
+  background-attachment: fixed;
+}
+*, :before, :after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*** IDK
+	@include box-sizing;
+  ***/
+}
+/*** IDK
+@mixin box-sizing {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+***/
+body::-webkit-scrollbar {
+  margin: 1vm;
+  opacity: 0;
+}
+body::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 1);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 1);
+}
+a {color:#000;}
+img {width:100%;}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border-color: gray;
+  border-style: solid;
+  top: 4%;
+  left: 4%;
+  position: absolute;
+  transform: translate (-50%, -50%);
+  padding: 40px 40px;
+  background-image: url('https://i.gifer.com/7SIm.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo p {
+  width: 150px;
+  height: 30px;
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background: rgba(225,225,225,.1);
+  text-align: center;
+  color: #fff;
+  letter-spacing:2px;
+  transform: translate(-50%, -50%);
+}
+
+/* .user {
+  position: absolute;
+  top: 28%;
+  Left: 9.5%;
+  margin: 0;
+  padding: 10px 4px;
+}
+
+.user p {
+  width: auto;
+  height: 30px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  background: rgba(225,225,225,.1);
+  text-align: center;
+  color: #fff;
+  letter-spacing:2px;
+  transform: translate(-50%, -50%);
+}
+/*
+
+/*** Titulo ***/
+.title {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.title h1 {text-align:center;font-size:25px;letter-spacing:5px;}
+.title small {display:block;font-weight:400;font-size:16px;letter-spacing:3px;}
+
+/* Style the search box */
+#mySearch {
+  width: 40%;
+  font-size: 18px;
+  padding: 11px;
+  background-color:transparent;
+  color:#fff;
+  text-align:center;
+  letter-spacing:3px;
+  font-family: 'Nunito', sans-serif;
+  outline:none;
+  border:none;
+  border-bottom: 2px solid rgba(225,225,225,.4);
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#mySearch:focus {
+  width: 50%;
+  border-bottom: 2px solid rgba(225,225,225,.8);
+}
+::-webkit-input-placeholder { /* Chrome */
+  color: rgba(225,225,225,.7);
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(225,225,225,.7);
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(225,225,225,.7);
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: rgba(225,225,225,.7);
+  opacity: 1;
+}
+.contenedor {
+  margin:0 10%;
+}
+.row {
+  margin: 10px -16px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.row,
+.row > .column {
+  padding:10px 20px;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  display: none;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Anime */
+.content {
+  position: relative;
+}
+.content figure{
+	background: #000;
+  overflow: hidden;
+  box-shadow: 6px 10px 10px rgba(0,0,0,0.13), 0 6px 10px rgba(0,0,0,0.4);
+}
+.content figure img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.content figure:hover img{
+	opacity: .7;
+}
+
+.content img {
+  width: 100%;
+	-webkit-transform: scale(1.05);
+	transform: scale(1.05);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.content:hover img {
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+}
+
+.content a {text-decoration:none; text-align:center; color: white; transition: .3s ease-in-out;}
+.content a:hover {
+   color: #000;
+      text-shadow: 5px 3px 5px rgba(0,0,0,.5);
+}
+h4{
+  margin:10px 0;
+}
+
+.content a small{
+  position: absolute;
+  margin:0;
+  color:#ddd;
+  background:rgba(0,0,0,0.9);
+  padding:5px 2px;
+  border-radius: 0 5px 5px 0;
+  writing-mode: vertical-rl;
+  letter-spacing:2px;
+  font-family:'M PLUS 1p';
+  box-shadow: 6px 10px 10px rgba(0,0,0,0.13), 0 6px 10px rgba(0,0,0,0.4);
+}
+.content a small:hover{background:rgba(0,0,0,0.95);}
+.content .type {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  margin:0;
+  color:#fff;
+  text-align: center;
+  border-radius: 25px;
+  padding: 0.5px;
+}
+.content .watch-list {
+  position: absolute;
+  top: 35px;
+  right: 5px;
+  margin:0;
+  color:#fff;
+  text-align: center;
+  border-radius: 25px;
+  padding: 0.5px;
+}
+.content .copyname {
+  position: absolute;
+  bottom: 40px;
+  margin: 6px;
+  color:#fff;
+  text-align: center;
+  border-radius: 25px;
+  padding: 0.5px;
+  word-wrap: break-word;
+}
+.content .year {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color:#fff;
+  background:rgba(0,0,0,.4);
+  
+  border-radius:0 0 10px 0;
+}
+.content span small {
+  padding:3px 10px;
+}
+/*** Type ***/
+#ova {background:orange;}
+#tv {background:#0092eb;}
+#movie {background:#05c152;}
+#special {background:#fd3246;}
+#new {background:#E80000;}
+#ona {background:#ffde49;color: #333;}
+#w-l {background:#484849;}
+#manga {background: #0000ff;}
+#l-n {background: purple;}
+#copy {background:#fff; opacity: 0; transition: .3s ease-in-out; color: #fff}
+
+#copy:hover {
+  opacity: 1;
+}
+
+.show {
+  display: block;
+}
+.TYPE .btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: gray;
+  cursor: pointer;
+  border-radius: 25px;
+  color: white;
+}
+.TYPE .btn:hover {
+  background-color: #ccc;
+  transition: .3s ease-in-out;
+}
+.TYPE .btn.active {
+  background-color: #000;
+  color: white;
+  border-radius: 25px;
+}
+.Watch-list .btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+.Watch-list .btn:hover {
+  background-color: #ccc;
+}
+.Copyname .btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: copy; 
+  color: white;
+  text-align:center;
+}
+.Copyname .btn:hover {
+  background-color: #ccc;
+}
+.ABC {
+  display: grid;
+  grid-template-columns: 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3% 3%;
+  grid-gap: .733%;
+  margin:15px 0;
+  padding:0;
+  background-color: black;
+  border-radius: 15px;
+  opacity: 0.8;
+}
+.ABC .btn {
+  background:transparent;
+  border:none;
+  outline: none;
+  cursor: pointer;
+  border-bottom:1px transparent solid;
+  padding:10px 0;
+  color: white;
+}
+.ABC .btn:hover {
+  border-bottom:1px #ccc solid;
+  color:#999;
+  border-radius: 25px;
+  transition: .3s ease-in-out;
+}
+
+.ABC .btn.active {
+  border-bottom:1px white solid;
+  color: whitesmoke;
+  border-radius: 25px;
+}
+
+/*** RESPONSIVE ***/
+/** 1000PX **/
+@media only screen and (max-width: 1200px) {
+    .contenedor{
+    margin:0 2%;
+  }
+    .column {
+  width: 25%;
+  }
+  .row > .column {
+  padding:10px 18px;
+}
+  .row {margin:0; padding:10px;}
+}
+/** 1000PX **/
+@media only screen and (max-width: 1100px) {
+  .contenedor{
+    margin:0 7%;
+  }
+    .column {
+  width: 33.33%;
+  }
+}
+/** 900PX **/
+@media only screen and (max-width: 900px) {
+  .contenedor{
+    margin:0 3%;
+  }
+    .content img {
+    -webkit-transform: scale(1.09);
+    transform: scale(1.09);
+  }
+}
+/** 750PX **/
+@media only screen and (max-width: 750px) {
+  .ABC {
+  grid-template-columns: 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7% 7%;
+  grid-gap: .1%;
+}
+  .ABC .btn {
+  padding:15px 0;
+}
+  .row { margin:0px; }
+}
+/** 600PX **/
+@media only screen and (max-width: 700px) {
+  .column {
+  width: 50%;
+}
+    .contenedor{
+    margin:0;
+  }
+.row > .column {
+  padding:10px 18px;
+}
+  .row { padding:10px }
+}
+/** 550PX **/
+@media only screen and (max-width: 550px) {
+  .column {
+  width: 100%;
+}
+.row > .column {
+  padding:10px 5%px;
+}
+  .row { margin: 0px;  padding:25px; }
+ .TYPE {
+  display: grid;
+  grid-template-columns: 16% 16% 16% 16% 16% 16%;
+  grid-gap: .66%;
+}
+  .TYPE .btn {padding: 12px 0px;
+}
+  /* Style the search box */
+#mySearch {
+  width: 60%;
+}
+
+#mySearch:focus {
+  width: 90%;
+}
+    .ABC {
+  grid-template-columns: 11% 11% 11% 11% 11% 11% 11% 11% 11%;
+  grid-gap: .1%;
+}
+  .ABC .btn{padding:20px 0;}
+}

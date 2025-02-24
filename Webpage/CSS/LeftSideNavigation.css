@@ -7,13 +7,20 @@
     overflow-x: hidden;
     padding-top: 60px;
     width: 200px;
-    transform: translateX(-250px);
     transition: transform 0.7s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.nav-sidebar.close {
+    transform: translateX(-250px);
     -webkit-transform: translateX(-250px);
     -moz-transform: translateX(-250px);
     -ms-transform: translateX(-250px);
     -o-transform: translateX(-250px);
+}
+
+.nav-sidebar[data-state="opened"]~main {
+    margin-left: 220px;
 }
 
 .nav-sidebar a {
@@ -51,9 +58,10 @@
     margin: 10px;
 }
 
-.section button.active {
+.creation-nav-link-btn.active {
     background-color: #02ff88;
     color: #242424;
+    animation: neon1 1.5s ease-in-out infinite alternate;
 }
 
 .openbtn:hover {
